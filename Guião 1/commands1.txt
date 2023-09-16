@@ -22,7 +22,11 @@ sadd set1 "Rowena" "Helga"
 sadd set2 "Godric" "Salazar"
 srem set2 "Salazar"
 smembers set2
+sismember set2 "Salazar"
+sismember set2 "Godric"
 srandmember set1
+sunion set1 set2
+
 #sorted sets
 zadd listaalunos 22012003 "Maria"
 zadd listaalunos 27092003 "Joana"
@@ -30,8 +34,11 @@ zadd listaalunos 30032003 "Afonso"
 zrange listaalunos 0 -1
 # hashset
 hmset hashset "1901" "1904" "1907" "1908"
-hmgetall hashset
+hgetall hashset
 hget hashset "1901"
 hlen hashset
 hdel hashset "1907"
+flushdb
+get planetas
+get mykey2
 flushdb
