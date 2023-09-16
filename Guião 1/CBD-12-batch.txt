@@ -1,0 +1,23 @@
+rpush lista 3 4 5 6 7
+lrange lista 0 -1
+set mykey 3
+get mykey
+mset chave1 "10" chave2 "15"
+setnx chave3 "16"
+sadd myset "maria" "joana" "laura"
+smembers myset 
+hmset hashset "A" "10" "J" "12" "D" "11"
+hgetall hashset
+del hashset
+exists key3
+randomkey
+type lista
+zadd alunos 1 "Maria José"
+zadd alunos 0 "João Gameiro"
+zrange alunos 0 -1 
+sadd set "luis" "joao" "pedro"
+sunion set myset
+flushdb
+
+
+

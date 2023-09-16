@@ -1,0 +1,37 @@
+#valores
+set mykey 5
+get mykey
+strlen mykey
+incr mykey
+get mykey
+ttl mykey # se der -1, tempo não predefinido
+incrby mykey 70
+get mykey
+expire mykey 10
+randomkey
+set mykey2 "lua"
+rename mykey2 planetas
+type planetas
+get planetas
+#listas
+rpush lista 3 4 5 6 7
+rlange lista 0 2
+lpop lista #retira primeira elemento, imprimindo na consola
+#sets 
+sadd set1 "Rowena" "Helga"
+sadd set2 "Godric" "Salazar"
+srem set2 "Salazar"
+smembers set2
+srandmember set1
+#sorted sets
+zadd listaalunos 22012003 "Maria"
+zadd listaalunos 27092003 "Joana"
+zadd listaalunos 30032003 "Afonso"
+zrange listaalunos 0 -1
+# hashset
+hmset hashset "1901" "1904" "1907" "1908"
+hmgetall hashset
+hget hashset "1901"
+hlen hashset
+hdel hashset "1907"
+flushdb
