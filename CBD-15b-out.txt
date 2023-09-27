@@ -1,0 +1,86 @@
+To terminate program, press Enter in all entries
+UserName: maria
+Produto: ovos
+Quantidade: 32
+ALERT: Maximum number of products reached!
+Wait for them to expire or choose another username.
+--------------------------------
+UserName: maria
+Número de valores no Sorted Set : 0
+--------------------------------
+To terminate program, press Enter in all entries
+UserName: maria
+Produto: queijo
+Quantidade: 14
+--------------------------------
+UserName: maria
+Elemento: [queijo,14.0]
+Número de valores no Sorted Set : 1
+--------------------------------
+To terminate program, press Enter in all entries
+UserName: maria
+Produto: fiambre
+Quantidade: 16
+--------------------------------
+UserName: maria
+Elemento: [queijo,14.0]
+Elemento: [fiambre,16.0]
+Número de valores no Sorted Set : 2
+--------------------------------
+To terminate program, press Enter in all entries
+UserName: maria
+Produto: leite
+Quantidade: 2
+ALERT: Maximum number of products reached!
+Wait for them to expire or choose another username.
+--------------------------------
+UserName: maria
+Elemento: [queijo,14.0]
+Elemento: [fiambre,16.0]
+Número de valores no Sorted Set : 2
+--------------------------------
+To terminate program, press Enter in all entries
+UserName: maria
+Produto: iogurtes
+Quantidade: 2
+ALERT: Maximum number of products reached!
+Wait for them to expire or choose another username.
+--------------------------------
+UserName: maria
+Elemento: [queijo,14.0]
+Elemento: [fiambre,16.0]
+Número de valores no Sorted Set : 2
+--------------------------------
+To terminate program, press Enter in all entries
+UserName: diogo
+Produto: esquadros
+Quantidade: 12
+--------------------------------
+UserName: diogo
+Elemento: [esquadros,12.0]
+Número de valores no Sorted Set : 1
+--------------------------------
+To terminate program, press Enter in all entries
+UserName: diogo
+Produto: rissois
+Quantidade: 3
+--------------------------------
+UserName: diogo
+Elemento: [rissois,3.0]
+Elemento: [esquadros,12.0]
+Número de valores no Sorted Set : 2
+--------------------------------
+To terminate program, press Enter in all entries
+UserName: maria
+Produto: robalo
+Quantidade: 2
+--------------------------------
+UserName: maria
+Elemento: [robalo,2.0]
+Número de valores no Sorted Set : 1
+--------------------------------
+To terminate program, press Enter in all entries
+UserName: 
+Produto: 
+Quantidade: 
+TERMINATING PROGRAM

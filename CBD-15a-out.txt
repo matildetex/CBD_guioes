@@ -1,0 +1,701 @@
+UserName: maria 
+Produto: detergente
+--------------------------------
+Produtos Pedidos pelo userName maria:
+-detergente
+--------------------------------
+UserName: maria 
+Produto: salmão
+--------------------------------
+Produtos Pedidos pelo userName: maria:
+-detergente
+-salmão
+--------------------------------
+UserName: maria 
+Produto: talheres
+--------------------------------
+Produtos Pedidos pelo userName maria:
+-detergente
+-salmão
+-talheres
+--------------------------------
+UserName: maria 
+Produto: cebola
+--------------------------------
+Produtos Pedidos pelo userName maria:
+-detergente
+-cebola
+-salmão
+-talheres
+--------------------------------
+UserName: maria 
+Produto: sabão
+--------------------------------
+Produtos Pedidos pelo userName: maria:
+-detergente
+-sabão
+-cebola
+-salmão
+-talheres
+--------------------------------
+UserName: maria 
+Produto: queijo
+--------------------------------
+Produtos Pedidos pelo userName maria:
+-detergente
+-sabão
+-cebola
+-salmão
+-talheres
+-queijo
+--------------------------------
+UserName: maria 
+Produto: fiambre
+--------------------------------
+Produtos Pedidos pelo userName maria:
+-detergente
+-sabão
+-fiambre
+-cebola
+-salmão
+-talheres
+-queijo
+--------------------------------
+UserName: josé 
+Produto: tijolos
+--------------------------------
+Produtos Pedidos pelo userName josé:
+-tijolos
+--------------------------------
+UserName: ana 
+Produto: uvas
+--------------------------------
+Produtos Pedidos pelo userName ana:
+-uvas
+--------------------------------
+UserName: maria 
+Produto: morangos
+--------------------------------
+Produtos Pedidos pelo userName maria:
+-detergente
+-sabão
+-fiambre
+-morangos
+-cebola
+-salmão
+-talheres
+-queijo
+--------------------------------
+UserName: maria 
+Produto: rissois
+--------------------------------
+Produtos Pedidos pelo userName: maria:
+-detergente
+-sabão
+-fiambre
+-morangos
+-cebola
+-salmão
+-talheres
+-queijo
+-rissois
+--------------------------------
+UserName: maria 
+Produto: post-its
+--------------------------------
+Produtos Pedidos pelo userName maria:
+-detergente
+-sabão
+-fiambre
+-post-its
+-morangos
+-cebola
+-salmão
+-talheres
+-queijo
+-rissois
+--------------------------------
+UserName: maria 
+Produto: corretor
+--------------------------------
+Produtos Pedidos pelo userName maria:
+-detergente
+-sabão
+-fiambre
+-post-its
+-morangos
+-corretor
+-cebola
+-salmão
+-talheres
+-queijo
+-rissois
+--------------------------------
+UserName: maria 
+Produto: robalo
+--------------------------------
+Produtos Pedidos pelo userName maria:
+-detergente
+-sabão
+-fiambre
+-post-its
+-morangos
+-corretor
+-cebola
+-salmão
+-talheres
+-robalo
+-queijo
+-rissois
+--------------------------------
+UserName: maria 
+Produto: laranja
+--------------------------------
+Produtos Pedidos pelo userName maria:
+-sabão
+-morangos
+-cebola
+-robalo
+-detergente
+-fiambre
+-post-its
+-corretor
+-laranja
+-salmão
+-talheres
+-queijo
+-rissois
+--------------------------------
+UserName: josé
+Produto: laranjas
+--------------------------------
+Produtos Pedidos pelo userName josé:
+-laranjas
+-tijolos
+--------------------------------
+UserName: maria
+Produto: oculos
+--------------------------------
+Produtos Pedidos pelo userName maria:
+-sabão
+-morangos
+-cebola
+-robalo
+-detergente
+-fiambre
+-post-its
+-corretor
+-laranja
+-salmão
+-oculos
+-talheres
+-queijo
+-rissois
+--------------------------------
+UserName: maria
+Produto: canetas
+--------------------------------
+Produtos Pedidos pelo userName maria:
+-sabão
+-morangos
+-cebola
+-robalo
+-detergente
+-fiambre
+-post-its
+-corretor
+-laranja
+-salmão
+-oculos
+-talheres
+-canetas
+-queijo
+-rissois
+--------------------------------
+UserName: maria
+Produto: auscultadores
+--------------------------------
+Produtos Pedidos pelo userName maria:
+-auscultadores
+-sabão
+-morangos
+-cebola
+-robalo
+-detergente
+-fiambre
+-post-its
+-corretor
+-laranja
+-salmão
+-oculos
+-talheres
+-canetas
+-queijo
+-rissois
+--------------------------------
+UserName: maria
+Produto: impressora
+--------------------------------
+Produtos Pedidos pelo userName maria:
+-auscultadores
+-sabão
+-morangos
+-cebola
+-robalo
+-impressora
+-detergente
+-fiambre
+-post-its
+-corretor
+-laranja
+-salmão
+-oculos
+-talheres
+-canetas
+-queijo
+-rissois
+--------------------------------
+UserName: maria 
+Produto: leite
+--------------------------------
+Produtos Pedidos pelo userName maria:
+-auscultadores
+-leite
+-sabão
+-morangos
+-cebola
+-robalo
+-impressora
+-detergente
+-fiambre
+-post-its
+-corretor
+-laranja
+-salmão
+-oculos
+-talheres
+-canetas
+-queijo
+-rissois
+--------------------------------
+UserName: maria
+Produto: pão de leite
+--------------------------------
+Produtos Pedidos pelo userName maria:
+-auscultadores
+-leite
+-sabão
+-morangos
+-cebola
+-robalo
+-impressora
+-detergente
+-fiambre
+-post-its
+-pão de leite
+-corretor
+-laranja
+-salmão
+-oculos
+-talheres
+-canetas
+-queijo
+-rissois
+--------------------------------
+UserName: maria 
+Produto: aveia
+--------------------------------
+Produtos Pedidos pelo userName maria:
+-auscultadores
+-leite
+-sabão
+-aveia
+-morangos
+-cebola
+-robalo
+-impressora
+-detergente
+-fiambre
+-post-its
+-pão de leite
+-corretor
+-laranja
+-salmão
+-oculos
+-talheres
+-canetas
+-queijo
+-rissois
+--------------------------------
+UserName: maria 
+Produto: trigo
+--------------------------------
+Produtos Pedidos pelo userName maria:
+-auscultadores
+-leite
+-sabão
+-aveia
+-morangos
+-cebola
+-trigo
+-robalo
+-impressora
+-detergente
+-fiambre
+-post-its
+-pão de leite
+-corretor
+-laranja
+-salmão
+-oculos
+-talheres
+-canetas
+-queijo
+-rissois
+--------------------------------
+UserName: maria 
+Produto: farinha
+--------------------------------
+Produtos Pedidos pelo userName maria:
+-auscultadores
+-leite
+-sabão
+-aveia
+-morangos
+-cebola
+-trigo
+-farinha
+-robalo
+-impressora
+-detergente
+-fiambre
+-post-its
+-pão de leite
+-corretor
+-laranja
+-salmão
+-oculos
+-talheres
+-canetas
+-queijo
+-rissois
+--------------------------------
+UserName: maria 
+Produto: fermento
+--------------------------------
+Produtos Pedidos pelo userName maria:
+-auscultadores
+-leite
+-sabão
+-aveia
+-morangos
+-cebola
+-trigo
+-farinha
+-robalo
+-impressora
+-detergente
+-fiambre
+-post-its
+-pão de leite
+-corretor
+-laranja
+-fermento
+-salmão
+-oculos
+-talheres
+-canetas
+-queijo
+-rissois
+--------------------------------
+UserName: maria 
+Produto: rato
+--------------------------------
+Produtos Pedidos pelo userName maria:
+-auscultadores
+-leite
+-sabão
+-aveia
+-morangos
+-cebola
+-trigo
+-farinha
+-robalo
+-impressora
+-detergente
+-fiambre
+-post-its
+-pão de leite
+-corretor
+-laranja
+-fermento
+-salmão
+-oculos
+-talheres
+-canetas
+-queijo
+-rissois
+-rato
+--------------------------------
+UserName: maria 
+Produto: pera
+--------------------------------
+Produtos Pedidos pelo userName maria:
+-sabão
+-cebola
+-trigo
+-farinha
+-pera
+-pão de leite
+-corretor
+-laranja
+-fermento
+-oculos
+-rissois
+-rato
+-auscultadores
+-leite
+-aveia
+-morangos
+-robalo
+-impressora
+-detergente
+-fiambre
+-post-its
+-salmão
+-talheres
+-canetas
+-queijo
+--------------------------------
+UserName: maria 
+Produto: maç
+--------------------------------
+Produtos Pedidos pelo userName maria:
+-sabão
+-cebola
+-trigo
+-farinha
+-pera
+-maç
+-pão de leite
+-corretor
+-laranja
+-fermento
+-oculos
+-rissois
+-rato
+-auscultadores
+-leite
+-aveia
+-morangos
+-robalo
+-impressora
+-detergente
+-fiambre
+-post-its
+-salmão
+-talheres
+-canetas
+-queijo
+--------------------------------
+UserName: maria 
+Produto: marcadores
+--------------------------------
+Produtos Pedidos pelo userName maria:
+-sabão
+-marcadores
+-cebola
+-trigo
+-farinha
+-pera
+-maç
+-pão de leite
+-corretor
+-laranja
+-fermento
+-oculos
+-rissois
+-rato
+-auscultadores
+-leite
+-aveia
+-morangos
+-robalo
+-impressora
+-detergente
+-fiambre
+-post-its
+-salmão
+-talheres
+-canetas
+-queijo
+--------------------------------
+UserName: maria 
+Produto: molas
+--------------------------------
+Produtos Pedidos pelo userName maria:
+-sabão
+-marcadores
+-molas
+-cebola
+-trigo
+-farinha
+-pera
+-maç
+-pão de leite
+-corretor
+-laranja
+-fermento
+-oculos
+-rissois
+-rato
+-auscultadores
+-leite
+-aveia
+-morangos
+-robalo
+-impressora
+-detergente
+-fiambre
+-post-its
+-salmão
+-talheres
+-canetas
+-queijo
+--------------------------------
+UserName: maria 
+Produto: esquadro
+--------------------------------
+Produtos Pedidos pelo userName maria:
+-sabão
+-marcadores
+-esquadro
+-molas
+-cebola
+-trigo
+-farinha
+-pera
+-maç
+-pão de leite
+-corretor
+-laranja
+-fermento
+-oculos
+-rissois
+-rato
+-auscultadores
+-leite
+-aveia
+-morangos
+-robalo
+-impressora
+-detergente
+-fiambre
+-post-its
+-salmão
+-talheres
+-canetas
+-queijo
+--------------------------------
+UserName: maria 
+Produto: ovos
+Maximum number of produts reached, wait for them to expire
+Choose another username or wait for them to expire
+--------------------------------
+Produtos Pedidos pelo userName maria:
+-sabão
+-marcadores
+-esquadro
+-molas
+-cebola
+-trigo
+-farinha
+-pera
+-maç
+-pão de leite
+-corretor
+-laranja
+-fermento
+-oculos
+-rissois
+-rato
+-auscultadores
+-leite
+-aveia
+-morangos
+-robalo
+-impressora
+-detergente
+-fiambre
+-post-its
+-salmão
+-talheres
+-canetas
+-queijo
+-ovos
+--------------------------------
+UserName: maria 
+Produto: linguado
+Operation cancelled. User has too many products
+--------------------------------
+Produtos Pedidos pelo userName maria:
+-sabão
+-marcadores
+-esquadro
+-molas
+-cebola
+-trigo
+-farinha
+-pera
+-maç
+-pão de leite
+-corretor
+-laranja
+-fermento
+-oculos
+-rissois
+-rato
+-auscultadores
+-leite
+-aveia
+-morangos
+-robalo
+-impressora
+-detergente
+-fiambre
+-post-its
+-salmão
+-talheres
+-canetas
+-queijo
+-ovos
+--------------------------------
+UserName: josé 
+Produto: linguado
+--------------------------------
+Produtos Pedidos pelo userName josé:
+-linguado
+-laranjas
+-tijolos
+--------------------------------
+UserName: diogo
+Produto: rissois
+--------------------------------
+Produtos Pedidos pelo userName diogo:
+-rissois
+--------------------------------
+UserName: ana 
+Produto: cartolina
+--------------------------------
+Produtos Pedidos pelo userName ana:
+-uvas
+-cartolina
+--------------------------------
+UserName: maria
+Produto: cartolina
+--------------------------------
+Produtos Pedidos pelo userName maria:
+-cartolina
+--------------------------------
+UserName: 
+Produto: 
