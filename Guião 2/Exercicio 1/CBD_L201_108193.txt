@@ -1,0 +1,442 @@
+# CBD – Lab201 – <108193>
+
+test> show dbs
+admin   40.00 KiB
+config  12.00 KiB
+local   72.00 KiB
+
+test> use DATABASE_NAME
+switched to db DATABASE_NAME
+DATABASE_NAME> use mydb
+switched to db mydb
+
+mydb> db
+mydb
+
+mydb> db.movie.insert({"name":"tutorials point"})
+DeprecationWarning: Collection.insert() is deprecated. Use insertOne, insertMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("6521cd85bf1aeb0311d8dbef") }
+}
+
+mydb> show dbs
+admin   40.00 KiB
+config  12.00 KiB
+local   72.00 KiB
+mydb     8.00 KiB
+
+mydb> db.dropDatabase()
+{ ok: 1, dropped: 'mydb' }
+
+mydb> show dbs
+admin   40.00 KiB
+config  12.00 KiB
+local   72.00 KiB
+
+mydb> use mydb
+already on db mydb
+
+mydb> db.dropDatabase()
+{ ok: 1, dropped: 'mydb' }
+
+mydb> show dbs
+admin   40.00 KiB
+config  12.00 KiB
+local   72.00 KiB
+
+mydb> use test
+switched to db test
+
+test> db.createCollection("mycollection")
+{ ok: 1 }
+
+test> show collections
+mycollection
+
+test> db.createCollection("mycol", { capped : true, size : 6142800, max : 10000 } )
+{ ok: 1 }
+
+test> db.tutorialspoint.insert({"name" : "tutorialspoint"}),
+... WriteResult({ "nInserted" : 1 })
+ReferenceError: WriteResult is not defined
+
+test> show collections
+mycol
+mycollection
+tutorialspoint
+
+test> use mydb
+switched to db mydb
+
+mydb> show collections
+
+mydb> db.mycollection.drop()
+true
+
+mydb> show collections
+
+mydb> db.createCollection("post")
+{ ok: 1 }
+
+mydb> db.post.insert([
+... 	{
+... 		title: "MongoDB Overview",
+... 		description: "MongoDB is no SQL database",
+... 		by: "tutorials point",
+... 		url: "http://www.tutorialspoint.com",
+... 		tags: ["mongodb", "database", "NoSQL"],
+... 		likes: 100
+... 	},
+... 	{
+... 	title: "NoSQL Database",
+... 	description: "NoSQL database doesn't have tables",
+... 	by: "tutorials point",
+... 	url: "http://www.tutorialspoint.com",
+... 	tags: ["mongodb", "database", "NoSQL"],
+... 	likes: 20,
+... 	comments: [
+... 		{
+... 			user:"user1",
+... 			message: "My first comment",
+... 			dateCreated: new Date(2013,11,10,2,35),
+... 			like: 0
+... 		}
+... 	]
+... }
+... ])
+
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("6521cf08bf1aeb0311d8dbf1"),
+    '1': ObjectId("6521cf08bf1aeb0311d8dbf2")
+  }
+}
+
+mydb> db.empDetails.insertOne(
+... 	{
+... 		First_Name: "Radhika",
+... 		Last_Name: "Sharma",
+... 		Date_Of_Birth: "1995-09-26",
+... 		e_mail: "radhika_sharma.123@gmail.com",
+... 		phone: "9848022338"
+... 	})
+{
+  acknowledged: true,
+  insertedId: ObjectId("6521cf93bf1aeb0311d8dbf5")
+}
+
+mydb> db.empDetails.insertMany(
+... 	[
+... 		{
+... 			First_Name: "Radhika",
+... 			Last_Name: "Sharma",
+... 			Date_Of_Birth: "1995-09-26",
+... 			e_mail: "radhika_sharma.123@gmail.com",
+... 			phone: "9000012345"
+... 		},
+... 		{
+... 			First_Name: "Rachel",
+... 			Last_Name: "Christopher",
+... 			Date_Of_Birth: "1990-02-16",
+... 			e_mail: "Rachel_Christopher.123@gmail.com",
+... 			phone: "9000054321"
+... 		},
+... 		{
+... 			First_Name: "Fathima",
+... 			Last_Name: "Sheik",
+... 			Date_Of_Birth: "1990-02-16",
+... 			e_mail: "Fathima_Sheik.123@gmail.com",
+... 			phone: "9000054321"
+... 		}
+... 	]
+... )
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("6521cf9dbf1aeb0311d8dbf6"),
+    '1': ObjectId("6521cf9dbf1aeb0311d8dbf7"),
+    '2': ObjectId("6521cf9dbf1aeb0311d8dbf8")
+  }
+}
+
+mydb> use sampleDB
+switched to db sampleDB
+
+sampleDB> db.createCollection("mycol")
+{ ok: 1 }
+
+sampleDB> db.mycol.insert([
+... 	{
+... 		title: "MongoDB Overview",
+... 		description: "MongoDB is no SQL database",
+... 		by: "tutorials point",
+... 		url: "http://www.tutorialspoint.com",
+... 		tags: ["mongodb", "database", "NoSQL"],
+... 		likes: 100
+... 	},
+... 	{
+... 		title: "NoSQL Database",
+... 		description: "NoSQL database doesn't have tables",
+... 		by: "tutorials point",
+... 		url: "http://www.tutorialspoint.com",
+... 		tags: ["mongodb", "database", "NoSQL"],
+... 		likes: 20,
+... 		comments: [
+... 			{
+... 				user:"user1",
+... 				message: "My first comment",
+... 				dateCreated: new Date(2013,11,10,2,35),
+... 				like: 0
+... 			}
+... 		]
+... 	}
+... ])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("6521cfc5bf1aeb0311d8dbf9"),
+    '1': ObjectId("6521cfc5bf1aeb0311d8dbfa")
+  }
+}
+
+sampleDB> db.mycol.find()
+[
+  {
+    _id: ObjectId("6521cfc5bf1aeb0311d8dbf9"),
+    title: 'MongoDB Overview',
+    description: 'MongoDB is no SQL database',
+    by: 'tutorials point',
+    url: 'http://www.tutorialspoint.com',
+    tags: [ 'mongodb', 'database', 'NoSQL' ],
+    likes: 100
+  },
+  {
+    _id: ObjectId("6521cfc5bf1aeb0311d8dbfa"),
+    title: 'NoSQL Database',
+    description: "NoSQL database doesn't have tables",
+    by: 'tutorials point',
+    url: 'http://www.tutorialspoint.com',
+    tags: [ 'mongodb', 'database', 'NoSQL' ],
+    likes: 20,
+    comments: [
+      {
+        user: 'user1',
+        message: 'My first comment',
+        dateCreated: ISODate("2013-12-10T02:35:00.000Z"),
+        like: 0
+      }
+    ]
+  }
+]
+
+sampleDB> db.mycol.find().pretty()
+[
+  {
+    _id: ObjectId("6521cfc5bf1aeb0311d8dbf9"),
+    title: 'MongoDB Overview',
+    description: 'MongoDB is no SQL database',
+    by: 'tutorials point',
+    url: 'http://www.tutorialspoint.com',
+    tags: [ 'mongodb', 'database', 'NoSQL' ],
+    likes: 100
+  },
+  {
+    _id: ObjectId("6521cfc5bf1aeb0311d8dbfa"),
+    title: 'NoSQL Database',
+    description: "NoSQL database doesn't have tables",
+    by: 'tutorials point',
+    url: 'http://www.tutorialspoint.com',
+    tags: [ 'mongodb', 'database', 'NoSQL' ],
+    likes: 20,
+    comments: [
+      {
+        user: 'user1',
+        message: 'My first comment',
+        dateCreated: ISODate("2013-12-10T02:35:00.000Z"),
+        like: 0
+      }
+    ]
+  }
+]
+
+sampleDB> db.mycol.find({$and:[{"by":"tutorials point"},{"title": "MongoDB Overview"}]}).pretty()
+[
+  {
+    _id: ObjectId("6521cfc5bf1aeb0311d8dbf9"),
+    title: 'MongoDB Overview',
+    description: 'MongoDB is no SQL database',
+    by: 'tutorials point',
+    url: 'http://www.tutorialspoint.com',
+    tags: [ 'mongodb', 'database', 'NoSQL' ],
+    likes: 100
+  }
+]
+
+sampleDB> db.mycol.find({$and:[{"by":"tutorials point"},{"title": "MongoDB Overview"}]}).pretty()
+[
+  {
+    _id: ObjectId("6521cfc5bf1aeb0311d8dbf9"),
+    title: 'MongoDB Overview',
+    description: 'MongoDB is no SQL database',
+    by: 'tutorials point',
+    url: 'http://www.tutorialspoint.com',
+    tags: [ 'mongodb', 'database', 'NoSQL' ],
+    likes: 100
+  }
+]
+
+sampleDB> db.mycol.find({$or:[{"by":"tutorials point"},{"title": "MongoDB Overview"}]}).pretty()
+[
+  {
+    _id: ObjectId("6521cfc5bf1aeb0311d8dbf9"),
+    title: 'MongoDB Overview',
+    description: 'MongoDB is no SQL database',
+    by: 'tutorials point',
+    url: 'http://www.tutorialspoint.com',
+    tags: [ 'mongodb', 'database', 'NoSQL' ],
+    likes: 100
+  },
+  {
+    _id: ObjectId("6521cfc5bf1aeb0311d8dbfa"),
+    title: 'NoSQL Database',
+    description: "NoSQL database doesn't have tables",
+    by: 'tutorials point',
+    url: 'http://www.tutorialspoint.com',
+    tags: [ 'mongodb', 'database', 'NoSQL' ],
+    likes: 20,
+    comments: [
+      {
+        user: 'user1',
+        message: 'My first comment',
+        dateCreated: ISODate("2013-12-10T02:35:00.000Z"),
+        like: 0
+      }
+    ]
+  }
+]
+
+sampleDB> db.empDetails.insertMany(
+... 	[
+... 		{
+... 			First_Name: "Radhika",
+... 			Last_Name: "Sharma",
+... 			Age: "26",
+... 			e_mail: "radhika_sharma.123@gmail.com",
+... 			phone: "9000012345"
+... 		},
+... 		{
+... 			First_Name: "Rachel",
+... 			Last_Name: "Christopher",
+... 			Age: "27",
+... 			e_mail: "Rachel_Christopher.123@gmail.com",
+... 			phone: "9000054321"
+... 		},
+... 		{
+... 			First_Name: "Fathima",
+... 			Last_Name: "Sheik",
+... 			Age: "24",
+... 			e_mail: "Fathima_Sheik.123@gmail.com",
+... 			phone: "9000054321"
+... 		}
+... 	]
+... )
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("6521d04bbf1aeb0311d8dbfb"),
+    '1': ObjectId("6521d04bbf1aeb0311d8dbfc"),
+    '2': ObjectId("6521d04bbf1aeb0311d8dbfd")
+  }
+}
+
+sampleDB>db.empDetails.findOneAndUpdate(
+... 	{First_Name: 'Radhika'},
+... 	{ $set: { Age: '30',e_mail: 'radhika_newemail@gmail.com'}}
+... )
+{
+  _id: ObjectId("6521d04bbf1aeb0311d8dbfb"),
+  First_Name: 'Radhika',
+  Last_Name: 'Sharma',
+  Age: '26',
+  e_mail: 'radhika_sharma.123@gmail.com',
+  phone: '9000012345'
+}
+sample
+
+sampleDB> {
+... 	"_id" : ObjectId("5dd631f270fb13eec3963bef"),
+... 	"First_Name" : "Fathima",
+... 	"Last_Name" : "Sheik",
+... 	"Age" : "24",
+... 	"e_mail" : "Fathima_Sheik.123@gmail.com",
+... 	"phone" : "9000054321"
+... }
+
+sampleDB> db.empDetails.updateOne(
+... 	{First_Name: 'Radhika'},
+... 	{ $set: { Age: '30',e_mail: 'radhika_newemail@gmail.com'}}
+... )
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+
+sampleDB> db.empDetails.updateOne(
+... 	{First_Name: 'Radhika'},
+... 	{ $set: { Age: '30',e_mail: 'radhika_newemail@gmail.com'}}
+... )
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+
+sampleDB> db.empDetails.updateMany(
+... 	{Age:{ $gt: "25" }},
+... 	{ $set: { Age: '00'}}
+... )
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 2,
+  modifiedCount: 2,
+  upsertedCount: 0
+}
+
+sampleDB> db.empDetails.find()
+[
+  {
+    _id: ObjectId("6521d04bbf1aeb0311d8dbfb"),
+    First_Name: 'Radhika',
+    Last_Name: 'Sharma',
+    Age: '00',
+    e_mail: 'radhika_newemail@gmail.com',
+    phone: '9000012345'
+  },
+  {
+    _id: ObjectId("6521d04bbf1aeb0311d8dbfc"),
+    First_Name: 'Rachel',
+    Last_Name: 'Christopher',
+    Age: '00',
+    e_mail: 'Rachel_Christopher.123@gmail.com',
+    phone: '9000054321'
+  },
+  {
+    _id: ObjectId("6521d04bbf1aeb0311d8dbfd"),
+    First_Name: 'Fathima',
+    Last_Name: 'Sheik',
+    Age: '24',
+    e_mail: 'Fathima_Sheik.123@gmail.com',
+    phone: '9000054321'
+  }
+]
+
+
+
