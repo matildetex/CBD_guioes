@@ -1,0 +1,39 @@
+Numero de localidades distintas: 6
+
+
+Numero de restaurantes por localidade:
+ -> Queens - 738
+ -> Staten Island - 158
+ -> City Of Lights - 1
+ -> Brooklyn - 684
+ -> Manhattan - 1883
+ -> Bronx - 309
+
+
+Nome de restaurantes contendo 'Park' no nome:
+ -> Morris Park Bake Shop
+ -> New Park Pizzeria & Restaurant
+ -> Parkside Restaurant
+ -> New Parkway Restaurant
+ -> Sparks Steak House
+ -> Park Plaza Restaurant
+ -> Pizza Park
+ -> Rego Park Cafe
+ -> Park Billiards
+ -> Dyker Park Bagels
+ -> Nora'S Park Bench Cafe
+ -> Forest Park Golf Course
+ -> Park Italian Gourment
+ -> Whiskey Park
+ -> Terrace On The Park
+ -> Gigino At Wagner Park
+ -> Park Slope Ale House
+ -> Tribeca Park Cafe
+ -> Park Bar
+ -> Morris Park Pizza
+ -> The Hallmark Of Battery Park City- Dining Room
+ -> The Park
+ -> The Park Slope Chipshop
+ -> Central Park Boathouse
+ -> Sunset Park Diner & Donuts
+ -> Park'S Snack

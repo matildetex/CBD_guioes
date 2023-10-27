@@ -2268,127 +2268,127 @@ db.restaurants.find( { "address.coord.1":{$gt:42,$lte:52}}, {"restaurant_id":1,"
 ]
 //17. Liste nome, gastronomia e localidade de todos os restaurantes ordenando por ordem
 crescente da gastronomia e, em segundo, por ordem decrescente de localidade.
-db.restaurants.find({},{"nome": 1, "localidade": 1, "gastronomia": 1 }).sort({"localidade":-1})
+db.restaurants.find({},{"nome": 1, "localidade": 1, "gastronomia": 1 }).sort({"gastronomia":1}, {"localidade":-1})
 [
   {
-    _id: ObjectId("6526954a10884b857642f4a2"),
-    localidade: 'Staten Island',
-    gastronomia: 'Jewish/Kosher',
-    nome: 'Kosher Island'
+    _id: ObjectId("6526954a10884b857642fb6c"),
+    localidade: 'Manhattan',
+    gastronomia: 'Afghan',
+    nome: 'Afghan Kebab House'
   },
   {
-    _id: ObjectId("6526954a10884b857642f4ab"),
-    localidade: 'Staten Island',
-    gastronomia: 'Delicatessen',
-    nome: 'Bagels N Buns'
+    _id: ObjectId("6526954a10884b857642fc93"),
+    localidade: 'Manhattan',
+    gastronomia: 'Afghan',
+    nome: 'Khyber Pass'
   },
   {
-    _id: ObjectId("6526954a10884b857642f4b6"),
-    localidade: 'Staten Island',
-    gastronomia: 'Ice Cream, Gelato, Yogurt, Ices',
-    nome: 'Carvel Ice Cream'
+    _id: ObjectId("6526954a10884b857642fd52"),
+    localidade: 'Manhattan',
+    gastronomia: 'Afghan',
+    nome: 'Afghan Kebab House #1'
   },
   {
-    _id: ObjectId("6526954a10884b857642f4b8"),
-    localidade: 'Staten Island',
-    gastronomia: 'Delicatessen',
-    nome: 'Plaza Bagels & Deli'
+    _id: ObjectId("6526954a10884b8576430277"),
+    localidade: 'Manhattan',
+    gastronomia: 'Afghan',
+    nome: 'Ariana Kebab House'
   },
   {
-    _id: ObjectId("6526954a10884b857642f4bc"),
-    localidade: 'Staten Island',
-    gastronomia: 'Delicatessen',
-    nome: 'B & M Hot Bagel & Grocery'
+    _id: ObjectId("6526954a10884b857642f55d"),
+    localidade: 'Bronx',
+    gastronomia: 'African',
+    nome: 'African Terrace'
   },
   {
-    _id: ObjectId("6526954a10884b857642f4c8"),
-    localidade: 'Staten Island',
+    _id: ObjectId("6526954a10884b857642fe70"),
+    localidade: 'Brooklyn',
+    gastronomia: 'African',
+    nome: 'Madiba'
+  },
+  {
+    _id: ObjectId("6526954a10884b85764300e1"),
+    localidade: 'Queens',
+    gastronomia: 'African',
+    nome: 'Africana Restaurant'
+  },
+  {
+    _id: ObjectId("6526954a10884b85764301a5"),
+    localidade: 'Bronx',
+    gastronomia: 'African',
+    nome: 'Ebe Ye Yie African Restaurant'
+  },
+  {
+    _id: ObjectId("6526954a10884b857642f486"),
+    localidade: 'Manhattan',
     gastronomia: 'American',
-    nome: 'Great Kills Yacht Club'
+    nome: '1 East 66Th Street Kitchen'
   },
   {
-    _id: ObjectId("6526954a10884b857642f4d6"),
-    localidade: 'Staten Island',
-    gastronomia: 'Italian',
-    nome: 'Crystal Room'
-  },
-  {
-    _id: ObjectId("6526954a10884b857642f4d7"),
-    localidade: 'Staten Island',
+    _id: ObjectId("6526954a10884b857642f48a"),
+    localidade: 'Brooklyn',
     gastronomia: 'American',
-    nome: "Labetti'S Post # 2159"
+    nome: 'Regina Caterers'
   },
   {
-    _id: ObjectId("6526954a10884b857642f4db"),
-    localidade: 'Staten Island',
+    _id: ObjectId("6526954a10884b857642f48d"),
+    localidade: 'Manhattan',
     gastronomia: 'American',
-    nome: 'South Shore Swimming Club'
+    nome: 'P & S Deli Grocery'
   },
   {
-    _id: ObjectId("6526954a10884b857642f4ec"),
-    localidade: 'Staten Island',
-    gastronomia: 'Pizza/Italian',
-    nome: "Joe & Pat'S Pizzeria"
-  },
-  {
-    _id: ObjectId("6526954a10884b857642f4fe"),
-    localidade: 'Staten Island',
+    _id: ObjectId("6526954a10884b857642f48e"),
+    localidade: 'Manhattan',
     gastronomia: 'American',
-    nome: "Joyce'S Tavern"
+    nome: 'Angelika Film Center'
   },
   {
-    _id: ObjectId("6526954a10884b857642f50e"),
-    localidade: 'Staten Island',
-    gastronomia: 'Pizza/Italian',
-    nome: "Denino'S Pizzeria Tavern"
-  },
-  {
-    _id: ObjectId("6526954a10884b857642f527"),
-    localidade: 'Staten Island',
+    _id: ObjectId("6526954a10884b857642f496"),
+    localidade: 'Manhattan',
     gastronomia: 'American',
-    nome: "Li Greci'S Staaten Restaurant"
+    nome: 'Downtown Deli'
   },
   {
-    _id: ObjectId("6526954a10884b857642f52d"),
-    localidade: 'Staten Island',
+    _id: ObjectId("6526954a10884b857642f498"),
+    localidade: 'Brooklyn',
     gastronomia: 'American',
-    nome: 'Richmond County Country Club'
+    nome: 'Mejlander & Mulgannon'
   },
   {
-    _id: ObjectId("6526954a10884b857642f54a"),
-    localidade: 'Staten Island',
+    _id: ObjectId("6526954a10884b857642f49a"),
+    localidade: 'Manhattan',
     gastronomia: 'American',
-    nome: "Buddy'S Wonder Bar"
+    nome: 'Cafe Metro'
   },
   {
-    _id: ObjectId("6526954a10884b857642f550"),
-    localidade: 'Staten Island',
-    gastronomia: 'Italian',
-    nome: "Ni-Ni'S Cafe"
-  },
-  {
-    _id: ObjectId("6526954a10884b857642f561"),
-    localidade: 'Staten Island',
-    gastronomia: 'Italian',
-    nome: 'Roadhouse Restaurant'
-  },
-  {
-    _id: ObjectId("6526954a10884b857642f565"),
-    localidade: 'Staten Island',
+    _id: ObjectId("6526954a10884b857642f49b"),
+    localidade: 'Brooklyn',
     gastronomia: 'American',
-    nome: 'Colonnade Diner'
+    nome: 'Riviera Caterer'
   },
   {
-    _id: ObjectId("6526954a10884b857642f582"),
-    localidade: 'Staten Island',
+    _id: ObjectId("6526954a10884b857642f49c"),
+    localidade: 'Queens',
     gastronomia: 'American',
-    nome: "Jody'S Club"
+    nome: 'Brunos On The Boulevard'
   },
   {
-    _id: ObjectId("6526954a10884b857642f5b5"),
-    localidade: 'Staten Island',
-    gastronomia: 'Hamburgers',
-    nome: "Mcdonald'S"
+    _id: ObjectId("6526954a10884b857642f49e"),
+    localidade: 'Brooklyn',
+    gastronomia: 'American',
+    nome: 'C & C Catering Service'
+  },
+  {
+    _id: ObjectId("6526954a10884b857642f4a5"),
+    localidade: 'Brooklyn',
+    gastronomia: 'American',
+    nome: 'The Movable Feast'
+  },
+  {
+    _id: ObjectId("6526954a10884b857642f4a6"),
+    localidade: 'Manhattan',
+    gastronomia: 'American',
+    nome: 'Glorious Food'
   }
 ]
 //18. Liste nome, localidade, grade e gastronomia de todos os restaurantes localizados em
@@ -2642,6 +2642,7 @@ db.restaurants.find({"localidade": "Brooklyn", "gastronomia": {$ne: "American"},
 //19. Indique o número total de avaliações (numGrades) na coleção.
 db.restaurants.aggregate({ $project: { numGrades: { $size: "$grades" } } }, { $group: { _id: 0, totalGrades: { $sum: "$numGrades" } } }, { $project: { _id: 0 } } );
 [ { totalGrades: 18142 } ]
+
 //20. Apresente o nome e número de avaliações (numGrades) dos 3 restaurante com
 mais avaliações.
 db.restaurants.aggregate([ { $project: { nome: 1, numGrades: { $size: "$grades" } } }, { $sort: { numGrades: -1 } }, { $limit: 3 }] );
@@ -2663,6 +2664,7 @@ db.restaurants.aggregate([ { $project: { nome: 1, numGrades: { $size: "$grades" 
   }
 ]
 //21. Apresente o número total de avaliações (numGrades) em cada dia da semana.
+db.
 
 //22. Conte o total de restaurante existentes em cada localidade.
 db.restaurants.aggregate([ {$group: {_id:"$localidade", count:{$sum:1}}}] );
