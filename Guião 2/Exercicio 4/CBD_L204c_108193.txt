@@ -1,0 +1,11 @@
+As diferenças conceituais no uso de Redis e MongoDB, correspondem às diferenças nos modelos de base de dados usadas por estes, ou seja, key-value e column, respetivamente. 
+O Redis, apesar de oferecer um desempenho superior, é mais adequado para armazenar informações simples e não relacionadas. 
+Por outro lado, o MongoDB oferece flexibilidade, permitindo que documentos contenham outros documentos, tornando-o escalável horizontalmente em termos de estrutura de dados,no entanto não oferecendo a mesma rapidez na inserção e leitura de dados.
+
+Para a execução deste problema específico, o MongoDB mostrou-se mais adequado, principalmente devido à associação direta com o fator tempo, que estava relacionado com os produtos guardados. Essa abordagem não foi facilmente alcançada com o Redis.
+Quanto à diferença de desempenho entre o Redis e o MongoDB é notável, como evidenciado na tabela abaixo:
+
+Tempo de leitura no MongoDB: 25 ms
+Tempo de leitura no Redis: 8 ms
+Tempo de escrita no MongoDB: 9 ms
+Tempo de escrita no Redis: 1 ms

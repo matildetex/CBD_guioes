@@ -1,0 +1,79 @@
+======================== OPENING STORE ===========================
+ORDER
+Utilizador? Exit(exit) para sair 
+lia
+
+Pedido? Exit(exit) para sair
+brocolos
+
+Quantidade? Exit(exit) para sair
+22
+You have reached the limit of purchases for today.
+======================== CLOSING STORE ===========================
+ORDER
+Utilizador? Exit(exit) para sair 
+lia
+
+Pedido? Exit(exit) para sair
+couve
+
+Quantidade? Exit(exit) para sair
+9
+You have reached the limit of purchases for today.
+======================== CLOSING STORE ===========================
+ORDER
+Utilizador? Exit(exit) para sair 
+lia
+
+Pedido? Exit(exit) para sair
+couve
+
+Quantidade? Exit(exit) para sair
+2
+
+======PRODUTOS DO UTILIZADOR lia========
+> couve, quantity:22
+> couve, quantity:2
+
+======================== CLOSING STORE ===========================
+ORDER
+Utilizador? Exit(exit) para sair 
+joana
+
+Pedido? Exit(exit) para sair
+uvas
+
+Quantidade? Exit(exit) para sair
+9
+
+======PRODUTOS DO UTILIZADOR joana========
+> uvas, quantity:9
+
+======================== CLOSING STORE ===========================
+ORDER
+Utilizador? Exit(exit) para sair 
+matilde
+
+Pedido? Exit(exit) para sair
+rosas
+
+Quantidade? Exit(exit) para sair
+34
+You have reached the limit of purchases for today.
+======================== CLOSING STORE ===========================
+ORDER
+Utilizador? Exit(exit) para sair 
+matilde
+
+Pedido? Exit(exit) para sair
+tulipas
+
+Quantidade? Exit(exit) para sair
+2
+
+======PRODUTOS DO UTILIZADOR matilde========
+> tulipas, quantity:2
+
+======================== CLOSING STORE ===========================
+ORDER
+Utilizador? Exit(exit) para sair 

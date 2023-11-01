@@ -1,0 +1,843 @@
+======================== OPENING STORE ===========================
+ORDER
+
+Utilizador? Exit(exit) para sair 
+maria
+
+Pedido? Exit(exit) para sair
+alface
+
+======PRODUTOS DO UTILIZADOR maria========
+> alface
+
+ORDER
+
+Utilizador? Exit(exit) para sair 
+maria
+
+Pedido? Exit(exit) para sair
+tomates
+
+======PRODUTOS DO UTILIZADOR maria========
+> alface
+> tomates
+
+ORDER
+
+Utilizador? Exit(exit) para sair 
+maria
+
+Pedido? Exit(exit) para sair
+cebola
+
+======PRODUTOS DO UTILIZADOR maria========
+> alface
+> tomates
+> cebola
+
+ORDER
+
+Utilizador? Exit(exit) para sair 
+rita
+
+Pedido? Exit(exit) para sair
+papel
+
+======PRODUTOS DO UTILIZADOR rita========
+> papel
+
+ORDER
+
+Utilizador? Exit(exit) para sair 
+antonia
+
+Pedido? Exit(exit) para sair
+tijolos
+
+======PRODUTOS DO UTILIZADOR antonia========
+> tijolos
+
+ORDER
+
+Utilizador? Exit(exit) para sair 
+maria
+
+Pedido? Exit(exit) para sair
+agrafador
+
+======PRODUTOS DO UTILIZADOR maria========
+> alface
+> tomates
+> cebola
+> agrafador
+
+ORDER
+
+Utilizador? Exit(exit) para sair 
+maria
+
+Pedido? Exit(exit) para sair
+óculos
+
+======PRODUTOS DO UTILIZADOR maria========
+> alface
+> tomates
+> cebola
+> agrafador
+> óculos
+
+ORDER
+
+Utilizador? Exit(exit) para sair 
+maria
+
+Pedido? Exit(exit) para sair
+extintor
+
+======PRODUTOS DO UTILIZADOR maria========
+> alface
+> tomates
+> cebola
+> agrafador
+> óculos
+> extintor
+
+ORDER
+
+Utilizador? Exit(exit) para sair 
+maria
+
+Pedido? Exit(exit) para sair
+babete
+
+======PRODUTOS DO UTILIZADOR maria========
+> alface
+> tomates
+> cebola
+> agrafador
+> óculos
+> extintor
+> babete
+
+ORDER
+
+Utilizador? Exit(exit) para sair 
+maria
+
+Pedido? Exit(exit) para sair
+fio dental
+
+======PRODUTOS DO UTILIZADOR maria========
+> alface
+> tomates
+> cebola
+> agrafador
+> óculos
+> extintor
+> babete
+> fio dental
+
+ORDER
+
+Utilizador? Exit(exit) para sair 
+maria
+
+Pedido? Exit(exit) para sair
+raquete
+
+======PRODUTOS DO UTILIZADOR maria========
+> alface
+> tomates
+> cebola
+> agrafador
+> óculos
+> extintor
+> babete
+> fio dental
+> raquete
+
+ORDER
+
+Utilizador? Exit(exit) para sair 
+rita
+
+Pedido? Exit(exit) para sair
+bola
+
+======PRODUTOS DO UTILIZADOR rita========
+> papel
+> bola
+
+ORDER
+
+Utilizador? Exit(exit) para sair 
+maria
+
+Pedido? Exit(exit) para sair
+bolachas
+
+======PRODUTOS DO UTILIZADOR maria========
+> alface
+> tomates
+> cebola
+> agrafador
+> óculos
+> extintor
+> babete
+> fio dental
+> raquete
+> bolachas
+
+ORDER
+
+Utilizador? Exit(exit) para sair 
+maria
+
+Pedido? Exit(exit) para sair
+tesoura
+
+======PRODUTOS DO UTILIZADOR maria========
+> alface
+> tomates
+> cebola
+> agrafador
+> óculos
+> extintor
+> babete
+> fio dental
+> raquete
+> bolachas
+> tesoura
+
+ORDER
+
+Utilizador? Exit(exit) para sair 
+maria
+
+Pedido? Exit(exit) para sair
+garrafas
+
+======PRODUTOS DO UTILIZADOR maria========
+> alface
+> tomates
+> cebola
+> agrafador
+> óculos
+> extintor
+> babete
+> fio dental
+> raquete
+> bolachas
+> tesoura
+> garrafas
+
+ORDER
+
+Utilizador? Exit(exit) para sair 
+maria
+
+Pedido? Exit(exit) para sair
+canetas
+
+======PRODUTOS DO UTILIZADOR maria========
+> alface
+> tomates
+> cebola
+> agrafador
+> óculos
+> extintor
+> babete
+> fio dental
+> raquete
+> bolachas
+> tesoura
+> garrafas
+> canetas
+
+ORDER
+
+Utilizador? Exit(exit) para sair 
+maria
+
+Pedido? Exit(exit) para sair
+lapis
+
+======PRODUTOS DO UTILIZADOR maria========
+> alface
+> tomates
+> cebola
+> agrafador
+> óculos
+> extintor
+> babete
+> fio dental
+> raquete
+> bolachas
+> tesoura
+> garrafas
+> canetas
+> lapis
+
+ORDER
+
+Utilizador? Exit(exit) para sair 
+maria
+
+Pedido? Exit(exit) para sair
+tijolos
+
+======PRODUTOS DO UTILIZADOR maria========
+> alface
+> tomates
+> cebola
+> agrafador
+> óculos
+> extintor
+> babete
+> fio dental
+> raquete
+> bolachas
+> tesoura
+> garrafas
+> canetas
+> lapis
+> tijolos
+
+ORDER
+
+Utilizador? Exit(exit) para sair 
+maria
+
+Pedido? Exit(exit) para sair
+caderno
+
+======PRODUTOS DO UTILIZADOR maria========
+> alface
+> tomates
+> cebola
+> agrafador
+> óculos
+> extintor
+> babete
+> fio dental
+> raquete
+> bolachas
+> tesoura
+> garrafas
+> canetas
+> lapis
+> tijolos
+> caderno
+
+ORDER
+
+Utilizador? Exit(exit) para sair 
+maria
+
+Pedido? Exit(exit) para sair
+estojo
+
+======PRODUTOS DO UTILIZADOR maria========
+> alface
+> tomates
+> cebola
+> agrafador
+> óculos
+> extintor
+> babete
+> fio dental
+> raquete
+> bolachas
+> tesoura
+> garrafas
+> canetas
+> lapis
+> tijolos
+> caderno
+> estojo
+
+ORDER
+
+Utilizador? Exit(exit) para sair 
+maria
+
+Pedido? Exit(exit) para sair
+post-its
+
+======PRODUTOS DO UTILIZADOR maria========
+> alface
+> tomates
+> cebola
+> agrafador
+> óculos
+> extintor
+> babete
+> fio dental
+> raquete
+> bolachas
+> tesoura
+> garrafas
+> canetas
+> lapis
+> tijolos
+> caderno
+> estojo
+> post-its
+
+ORDER
+
+Utilizador? Exit(exit) para sair 
+maria
+
+Pedido? Exit(exit) para sair
+saco
+
+======PRODUTOS DO UTILIZADOR maria========
+> alface
+> tomates
+> cebola
+> agrafador
+> óculos
+> extintor
+> babete
+> fio dental
+> raquete
+> bolachas
+> tesoura
+> garrafas
+> canetas
+> lapis
+> tijolos
+> caderno
+> estojo
+> post-its
+> saco
+
+ORDER
+
+Utilizador? Exit(exit) para sair 
+maria
+
+Pedido? Exit(exit) para sair
+tinteiros
+
+======PRODUTOS DO UTILIZADOR maria========
+> alface
+> tomates
+> cebola
+> agrafador
+> óculos
+> extintor
+> babete
+> fio dental
+> raquete
+> bolachas
+> tesoura
+> garrafas
+> canetas
+> lapis
+> tijolos
+> caderno
+> estojo
+> post-its
+> saco
+> tinteiros
+
+ORDER
+
+Utilizador? Exit(exit) para sair 
+maria
+
+Pedido? Exit(exit) para sair
+clipes
+
+======PRODUTOS DO UTILIZADOR maria========
+> alface
+> tomates
+> cebola
+> agrafador
+> óculos
+> extintor
+> babete
+> fio dental
+> raquete
+> bolachas
+> tesoura
+> garrafas
+> canetas
+> lapis
+> tijolos
+> caderno
+> estojo
+> post-its
+> saco
+> tinteiros
+> clipes
+
+ORDER
+
+Utilizador? Exit(exit) para sair 
+maria
+
+Pedido? Exit(exit) para sair
+livro
+
+======PRODUTOS DO UTILIZADOR maria========
+> alface
+> tomates
+> cebola
+> agrafador
+> óculos
+> extintor
+> babete
+> fio dental
+> raquete
+> bolachas
+> tesoura
+> garrafas
+> canetas
+> lapis
+> tijolos
+> caderno
+> estojo
+> post-its
+> saco
+> tinteiros
+> clipes
+> livro
+
+ORDER
+
+Utilizador? Exit(exit) para sair 
+maria
+
+Pedido? Exit(exit) para sair
+carne
+
+======PRODUTOS DO UTILIZADOR maria========
+> alface
+> tomates
+> cebola
+> agrafador
+> óculos
+> extintor
+> babete
+> fio dental
+> raquete
+> bolachas
+> tesoura
+> garrafas
+> canetas
+> lapis
+> tijolos
+> caderno
+> estojo
+> post-its
+> saco
+> tinteiros
+> clipes
+> livro
+> carne
+
+ORDER
+
+Utilizador? Exit(exit) para sair 
+maria
+
+Pedido? Exit(exit) para sair
+mala
+
+======PRODUTOS DO UTILIZADOR maria========
+> alface
+> tomates
+> cebola
+> agrafador
+> óculos
+> extintor
+> babete
+> fio dental
+> raquete
+> bolachas
+> tesoura
+> garrafas
+> canetas
+> lapis
+> tijolos
+> caderno
+> estojo
+> post-its
+> saco
+> tinteiros
+> clipes
+> livro
+> carne
+> mala
+
+ORDER
+
+Utilizador? Exit(exit) para sair 
+maria
+
+Pedido? Exit(exit) para sair
+meias
+
+======PRODUTOS DO UTILIZADOR maria========
+> alface
+> tomates
+> cebola
+> agrafador
+> óculos
+> extintor
+> babete
+> fio dental
+> raquete
+> bolachas
+> tesoura
+> garrafas
+> canetas
+> lapis
+> tijolos
+> caderno
+> estojo
+> post-its
+> saco
+> tinteiros
+> clipes
+> livro
+> carne
+> mala
+> meias
+
+ORDER
+
+Utilizador? Exit(exit) para sair 
+maria
+
+Pedido? Exit(exit) para sair
+mola
+
+======PRODUTOS DO UTILIZADOR maria========
+> alface
+> tomates
+> cebola
+> agrafador
+> óculos
+> extintor
+> babete
+> fio dental
+> raquete
+> bolachas
+> tesoura
+> garrafas
+> canetas
+> lapis
+> tijolos
+> caderno
+> estojo
+> post-its
+> saco
+> tinteiros
+> clipes
+> livro
+> carne
+> mala
+> meias
+> mola
+
+ORDER
+
+Utilizador? Exit(exit) para sair 
+maria
+
+Pedido? Exit(exit) para sair
+carregador
+
+======PRODUTOS DO UTILIZADOR maria========
+> alface
+> tomates
+> cebola
+> agrafador
+> óculos
+> extintor
+> babete
+> fio dental
+> raquete
+> bolachas
+> tesoura
+> garrafas
+> canetas
+> lapis
+> tijolos
+> caderno
+> estojo
+> post-its
+> saco
+> tinteiros
+> clipes
+> livro
+> carne
+> mala
+> meias
+> mola
+> carregador
+
+ORDER
+
+Utilizador? Exit(exit) para sair 
+maria
+
+Pedido? Exit(exit) para sair
+laranjas
+
+======PRODUTOS DO UTILIZADOR maria========
+> alface
+> tomates
+> cebola
+> agrafador
+> óculos
+> extintor
+> babete
+> fio dental
+> raquete
+> bolachas
+> tesoura
+> garrafas
+> canetas
+> lapis
+> tijolos
+> caderno
+> estojo
+> post-its
+> saco
+> tinteiros
+> clipes
+> livro
+> carne
+> mala
+> meias
+> mola
+> carregador
+> laranjas
+
+ORDER
+
+Utilizador? Exit(exit) para sair 
+maria
+
+Pedido? Exit(exit) para sair
+tomate
+
+======PRODUTOS DO UTILIZADOR maria========
+> alface
+> tomates
+> cebola
+> agrafador
+> óculos
+> extintor
+> babete
+> fio dental
+> raquete
+> bolachas
+> tesoura
+> garrafas
+> canetas
+> lapis
+> tijolos
+> caderno
+> estojo
+> post-its
+> saco
+> tinteiros
+> clipes
+> livro
+> carne
+> mala
+> meias
+> mola
+> carregador
+> laranjas
+> tomate
+
+ORDER
+
+Utilizador? Exit(exit) para sair 
+maria
+
+Pedido? Exit(exit) para sair
+marcadores
+
+======PRODUTOS DO UTILIZADOR maria========
+> alface
+> tomates
+> cebola
+> agrafador
+> óculos
+> extintor
+> babete
+> fio dental
+> raquete
+> bolachas
+> tesoura
+> garrafas
+> canetas
+> lapis
+> tijolos
+> caderno
+> estojo
+> post-its
+> saco
+> tinteiros
+> clipes
+> livro
+> carne
+> mala
+> meias
+> mola
+> carregador
+> laranjas
+> tomate
+> marcadores
+
+ORDER
+
+Utilizador? Exit(exit) para sair 
+maria
+You have reached the limit of purchases for today.
+ORDER
+
+Utilizador? Exit(exit) para sair 
+julia                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          julia
+
+Pedido? Exit(exit) para sair
+esfregão
+
+======PRODUTOS DO UTILIZADOR julia========
+> esfregão
+
+ORDER
+
+Utilizador? Exit(exit) para sair 
+joana
+
+Pedido? Exit(exit) para sair
+garrafa
+
+======PRODUTOS DO UTILIZADOR joana========
+> garrafa
+
+ORDER
+
+Utilizador? Exit(exit) para sair 
+rita
+
+Pedido? Exit(exit) para sair
+esfregona
+
+======PRODUTOS DO UTILIZADOR rita========
+> papel
+> bola
+> esfregona
+
+ORDER
+
+Utilizador? Exit(exit) para sair 

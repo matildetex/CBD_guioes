@@ -20,6 +20,7 @@ import com.mongodb.client.model.Updates;
 import com.mongodb.client.result.InsertOneResult;
 
 public class Ex3a {
+    
 
     public static void main( String[] args ) {
 
