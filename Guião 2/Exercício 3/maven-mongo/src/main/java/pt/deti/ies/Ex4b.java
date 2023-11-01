@@ -44,7 +44,7 @@ public class Ex4b {
             Scanner scanTerm = new Scanner(System.in);
             FileOutputStream file = new FileOutputStream("CBD_L204b-out_108193.txt");
             try (PrintStream out = new PrintStream(file, true)) {
-                String path = "Guião 2/Exercicio 3";
+                String path = "Guião 2/Exercicio 4";
                 File fin = new File(path);
                 out.println("======================== OPENING STORE ===========================");
                 collection.createIndex(new Document("products.expirationTime", 1), new IndexOptions().expireAfter((long) 3600, TimeUnit.SECONDS));
@@ -132,7 +132,7 @@ public class Ex4b {
                             if(quantS.equalsIgnoreCase("exit")){
                                 break;
                             }
-                            if(quant>=limit || quant+totalQuantity>=limit){
+                            if(quant>=limit || quant+totalQuantity>limit){
                                 out.println("You have reached the limit of purchases for today.");
                             }
                             else{
@@ -160,11 +160,10 @@ public class Ex4b {
                             }
                         }
                     }
-
-                out.println("======================== CLOSING STORE ===========================");
                 
         
-        }scanTerm.close();
+        } out.println("======================== CLOSING STORE ===========================");
+        scanTerm.close();
         } catch (MongoException me) {
             System.err.println("Error: " + me);
         }

@@ -1,0 +1,5 @@
+======================== OPENING STORE ===========================
+ORDER
+Utilizador? Exit(exit) para sair 
+exit
+======================== CLOSING STORE ===========================

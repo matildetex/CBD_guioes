@@ -6,6 +6,7 @@ import java.util.*;
 import redis.clients.jedis.Jedis;
 
 public class Exercicio5a {
+    
     public static int limit = 30; //mudar para valores exatos
     public static int timeslot = 3600*60;
     public static void main(String[] args) {

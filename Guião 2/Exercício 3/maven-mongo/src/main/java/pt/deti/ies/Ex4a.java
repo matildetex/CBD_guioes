@@ -19,6 +19,7 @@ import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.IndexOptions;
 
@@ -38,8 +39,15 @@ public class Ex4a {
             Scanner scanTerm = new Scanner(System.in);
             FileOutputStream file = new FileOutputStream("CBD_L204a-out_108193.txt");
             try (PrintStream out = new PrintStream(file, true)) {
-                String path = "Guião 2/Exercicio 3";
+                String path = "Guião 2/Exercicio 4";
                 File fin = new File(path);
+                collection.dropIndex("products.expirationTime_1");
+                MongoCursor<Document> indexCursor = collection.listIndexes().iterator();
+                while (indexCursor.hasNext()) {
+                    Document index = indexCursor.next();
+                    String indexName = index.getString("name");
+                    System.out.println("Nome do Índice: " + indexName);
+                }
                 out.println("======================== OPENING STORE ===========================");
                 collection.createIndex(new Document("products.expirationTime", 1), new IndexOptions().expireAfter((long) 3600, TimeUnit.SECONDS));
                 while (true) {
