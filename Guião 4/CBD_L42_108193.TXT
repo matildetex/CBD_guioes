@@ -1,0 +1,129 @@
+// NMEC: 108193
+
+#1 Encontre todos os atores que dirigiram um filme em que também atuaram e apresente o nome do ator e o título do filme.
+match (n)-[:ACTED_IN]->(m)<-[:DIRECTED]-(n)
+RETURN DISTINCT n, m
+
+# 2. Para cada filme realizado depois de 2005, apresente os nomes de todos os atores que atuaram nesse filme.
+match(people:Person)-[:ACTED_IN]->(moviesacted)
+WITH moviesacted, COLLECT(people) AS actors
+WHERE moviesacted.released>2005 
+RETURN moviesacted.title, actors
+
+# 3. Encontre pares de nós com mais do que uma relação entre si.
+match (a)-[r]-(b)
+WITH a, b, COUNT(r) AS relCount
+WHERE relCount > 1
+RETURN a, b, relCount
+
+# 4. Encontre todos os pares de pessoas que fizeram revisões do mesmo filme. Apresente os seus nomes e título de cada filme.
+match (p1:Person)-[:REVIEWED]->(movie)<-[:REVIEWED]-(p2:Person)
+WHERE ID(p1) < ID(p2)
+RETURN p1.name AS person1, p2.name AS person2, movie.title AS movieTitle
+
+# 5. Encontre todos os pares de atores que atuaram em vários filmes juntos.
+match (p1:Person)-[:ACTED_IN]->(movie)<-[:ACTED_IN]-(p2:Person)
+WHERE ID(p1) < ID(p2)
+WITH p1, p2, COLLECT(movie) AS commonMovies
+WHERE size(commonMovies) > 1
+RETURN p1.name AS person1, p2.name AS person2, commonMovies
+
+# 6. Determine a idade média do elenco do filme "Apollo 13" no ano do lançamento do filme.
+match(people:Person)-[:ACTED_IN]->(m {title: "Apollo 13"})
+WITH people, date().year-people.born AS agecast
+RETURN avg(agecast)
+
+# 7. Encontre os 10 filmes com o elenco mais velho no momento do lançamento do filme. Apresente o filme e a idade média arredondada a 2 casas decimais, por ordem decrescente.
+match (people:Person)-[:ACTED_IN]->(m)
+WITH people, m, m.released - people.born AS agecastmovielaunched
+WITH m, AVG(agecastmovielaunched) AS averageAge
+WITH m, toFloat(round(averageAge)) AS roundedAverageAge
+ORDER BY roundedAverageAge DESC
+RETURN DISTINCT m.title, roundedAverageAge AS averageAge
+LIMIT 10
+
+# 8. Apresente o subgrafo ACTED_IN do filme com o elenco mais novo, no momento do lançamento do filme.
+match (people:Person)-[:ACTED_IN]->(movie:Movie)
+WITH people, movie, COLLECT(people) AS actors, movie.released - people.born AS agecast
+ORDER BY agecast ASC
+LIMIT 1
+MATCH (selectedMovie:Movie {title: movie.title})<-[:ACTED_IN]-(selectedActor:Person)
+RETURN selectedMovie, COLLECT(selectedActor) AS cast
+
+# 9. Qual é o caminho mais curto (usando qualquer tipo de relação) entre John Cusack e Demi Moore?
+match p=shortestPath(
+(cusa:Person {name:"John Cusack"})-[*]-(demi:Person {name:"Demi Moore"}))
+RETURN p
+
+# 10. Qual a dimensão caminho mais curto (usando qualquer tipo de relação) entre Keanu Reeves e Tom Cruise?
+MATCH p=shortestPath(
+(keanu:Person {name:"Keanu Reeves"})-[*]-(cruise:Person {name:"Tom Cruise"}))
+RETURN length(p)
+
+# 11. Quais são as dimensões do caminho mais curto entre pessoas com nome Jim e pessoas com nome Kevin?
+MATCH (jim:Person)
+WHERE jim.name CONTAINS "Jim"
+MATCH (kevin:Person)
+WHERE kevin.name CONTAINS "Kevin"
+MATCH p=shortestPath((jim)-[*]-(kevin))
+RETURN length(p) AS pathLength
+
+# 12. Que pessoas têm uma distância 2 para Jim Cash (a distância entre duas pessoas é o comprimento do caminho mais curto entre eles)?
+MATCH path = (cash:Person{name: "Jim Cash"})-[*2]-(randompeople:Person)
+WHERE nodes(path)[0] <> nodes(path)[2]
+WITH DISTINCT randompeople
+RETURN randompeople
+
+%%%%%%%%%%%%%%%VER SE ESTÁ CERTO DEPOIS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+# 13. Qual é a maior distância de uma pessoa para Kevin Bacon?
+MATCH path = (bacon:Person{name: "Kevin Bacon"})-[*10..]-(randompeople:Person)
+WHERE nodes(path)[0] <> nodes(path)[2]
+RETURN MAX(length(path)) AS maxDistance
+
+# 14. Qual é a maior distância entre duas pessoas?
+MATCH path = (person1:Person)-[*4..]-(person2:Person)
+WHERE nodes(path)[0] <> nodes(path)[2]
+RETURN MAX(length(path)) AS maxDistance
+
+# 15. Qual é a distribuição de distâncias em pares (isto é, para a distância 1, 2, 3, ..., quantos pares de pessoas têm essa distância um do outro)?
+match (person1:Person), (person2:Person)
+where id(person1)<id(person2)
+match path=((person1:Person)-[*]-(person2:Person))
+return person1.name, person2.name, length(path) as distânciapares
+
+%%%%%%%%%%%%%%%VER SE ESTÁ CERTO DEPOIS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+# 16. Indique as 10 pessoas com menor distância média em que o caminho entre elas são relações do tipo ACTED_IN.
+MATCH (person1:Person)-[:ACTED_IN]->(:Movie)<-[:ACTED_IN]-(person2:Person)
+WHERE id(person1) < id(person2)
+WITH person1, person2, shortestPath((person1)-[*]-(person2)) AS path
+WHERE nodes(path)[0] <> nodes(path)[2]
+WITH person1, person2, length(path) AS distance
+RETURN person1.name AS person1, person2.name AS person2, AVG(distance) AS averageDistance
+ORDER BY averageDistance ASC
+LIMIT 10
+
+# 17. Apresente os atores que tiveram pelo menos uma role para personagens com o prefixo 'Dr.'. O resultado deve ser uma lista com o par “Ator, Lista das roles”.
+MATCH (actor:Person)-[role:ACTED_IN]->(movie:Movie)
+WHERE ANY(role1 IN role.roles WHERE role1 STARTS WITH "Dr")
+RETURN actor.name AS actor, COLLECT(role.roles) AS listaroles
+
+# 18. Encontrar Atores que Atuaram em Mais de Um Filme no Mesmo Ano
+MATCH (actor:Person)-[:ACTED_IN]->(movie1:Movie)
+MATCH (actor)-[:ACTED_IN]->(movie2:Movie)
+WHERE movie1 <> movie2 AND movie1.released = movie2.released 
+WITH actor, COLLECT(DISTINCT movie1) AS movies1, COLLECT(DISTINCT movie2) AS movies2
+RETURN actor.name AS actor, movies1, movies2
+
+# 19. Apresenta os tipos de relações a "Lilly Wachowski"
+MATCH (:Person {name: "Lilly Wachowski"})-[r]->()
+RETURN DISTINCT TYPE(r) AS relationshipType
+
+# 20. Identificar Atores que Trabalharam com mais que 2 Diretores iguais
+MATCH (actor1:Person)-[:ACTED_IN]->(:Movie)<-[:DIRECTED]-(director:Person)
+MATCH (actor2:Person)-[:ACTED_IN]->(:Movie)<-[:DIRECTED]-(director)
+WHERE actor1 <> actor2 AND id(actor1) < id(actor2)
+WITH actor1, actor2, COLLECT(DISTINCT director.name) AS commonDirectors
+WHERE SIZE(commonDirectors) >= 2
+RETURN actor1.name AS actor1, actor2.name AS actor2, commonDirectors

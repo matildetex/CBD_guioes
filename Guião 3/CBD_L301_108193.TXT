@@ -1,0 +1,105 @@
+CREATE KEYSPACE my_keyspace 
+   WITH REPLICATION = {'class' : 'SimpleStrategy', 'replication_factor' : 3}; #criar keyspace
+
+USE my_keyspace; #usar keyspace para criar as tabelas
+
+CREATE TABLE my_table ( #criar tabela
+  id int PRIMARY KEY,
+  name text,
+  age int
+  );
+
+INSERT INTO my_table (id, name, age) VALUES (1, 'Matilde Rita', 18); #inserção na tabela
+
+SELECT * FROM my_table; #selecionar todas as entradas da tabela
+
+ id | age | name
+----+-----+--------------
+  1 |  21 | Beatriz Cruz
+
+
+UPDATE my_table SET age = 31 WHERE id = 1; #modificar parametro da tabela onde id=1
+SELECT * FROM my_table;
+
+ id | age | name
+----+-----+--------------
+  1 |  31 | Beatriz Cruz
+  2 |  18 | Matilde Rita
+
+DELETE FROM my_table WHERE id = 2; #apagar da tabela o registo quando id=2
+SELECT * FROM my_table;
+
+ id | age | name
+----+-----+--------------
+  1 |  31 | Beatriz Cruz
+
+CREATE TABLE my_table2 (  id int PRIMARY KEY,  name text,  age int,  is_active boolean,  salary double,  birth_date timestamp );  #criar tabela com diferentes tipos de dados
+
+INSERT INTO my_table2 (id, name, age, is_active, salary, birth_date) VALUES (1, 'John Doe', 30, true, 50000.0, '1990-01-01 00:00:00'); #inserção com tipos de dados mais complexos
+
+SELECT * FROM my_table2;                                                                               
+
+ id | age | birth_date                      | is_active | name     | salary
+----+-----+---------------------------------+-----------+----------+--------
+  1 |  30 | 1990-01-01 00:00:00.000000+0000 |      True | John Doe |  50000
+
+(1 rows)
+
+TRUNCATE my_table2; #apagar todos os registos da tabela
+SELECT * FROM my_table2;
+
+ id | age | birth_date | is_active | name | salary
+----+-----+------------+-----------+------+--------
+
+DROP TABLE my_table2; #apagar tabela
+SELECT * FROM my_table2;
+
+InvalidRequest: Error from server: code=2200 [Invalid query] message="table my_table2 does not exist"
+
+CREATE INDEX ON my_table (name); #criar um index na tabela my_table no atributo name
+
+CREATE TABLE my_table5 ( #criar tabela com tuplos
+  id int PRIMARY KEY,
+  name text,
+  details tuple<text, int, boolean>
+  );
+
+INSERT INTO my_table5 (id, name, details) VALUES (1, 'Matilde Rita', ('Rita', 30, true)); #inserir dados em tuplos na tabela
+cqlsh:my_keyspace>   SELECT * FROM my_table5;
+
+ id | details            | name
+----+--------------------+--------------
+  1 | ('Rita', 30, True) | Matilde Rita
+
+(1 rows)
+
+ CREATE TABLE my_table ( #inserir uma lista como atributo da tabela
+  id int PRIMARY KEY,
+  name text,
+  hobbies list<text>
+  );
+
+INSERT INTO my_table (id, name, hobbies) VALUES (1, 'Beatriz', ['reading', 'gaming']); #inserir uma lista
+SELECT * FROM my_table;
+
+ id | hobbies               | name
+----+-----------------------+---------
+  1 | ['reading', 'gaming'] | Beatriz
+
+INSERT INTO my_table (id, name, age, salary) VALUES (1, 'John Doe', 30, 9000.0) USING TTL 3; #testar time to live
+SELECT * FROM my_table;
+
+ id | age | name     | salary
+----+-----+----------+--------
+  1 |  30 | John Doe |   9000
+
+SELECT * FROM my_table;
+
+ id | age | name | salary
+----+-----+------+--------
+
+cqlsh:my_keyspace> SELECT id, name, hobbies, WRITETIME(name) FROM my_table WHERE id = 1; #testar write time
+
+ id | name     | hobbies                         | writetime(name)
+----+----------+---------------------------------+------------------
+  1 | John Doe | ['dancing', 'playing monopoly'] | 1700709233430872

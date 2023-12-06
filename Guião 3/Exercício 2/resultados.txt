@@ -1,0 +1,163 @@
+//Queries
+
+7. Permitir a pesquisa de todos os vídeos de determinado autor;
+SELECT * FROM Videos WHERE username='bob_smith';
+
+ username  | video_id                             | description                                     | tags                | upload_timestamp                | video_name
+-----------+--------------------------------------+-------------------------------------------------+---------------------+---------------------------------+-----------------------------
+ bob_smith | 09941c2d-7281-4d70-9517-9ff0495a79c1 |     Learn how to cook delicious recipes at home | ['cooking', 'food'] | 2023-12-17 12:00:00.000000+0000 |         Cooking Masterclass
+ bob_smith | de951ba4-739e-40d9-af0a-a77a88ef0d7a | Savoring local cuisine and food spots in Aveiro |  ['Aveiro', 'food'] | 2023-12-31 12:00:00.000000+0000 | Culinary Delights in Aveiro
+
+8. Permitir a pesquisa de comentários por utilizador, ordenado inversamente pela data;
+SELECT * FROM Comments WHERE username = 'alice_jones' ORDER BY timestamp DESC;
+
+ username    | timestamp                       | video_name         | comment_id                           | comment_text
+-------------+---------------------------------+--------------------+--------------------------------------+---------------------------------------------------------------------------------------------
+ alice_jones | 2024-01-03 05:15:00.000000+0000 | Nature Photography | b72091a1-5ff4-42a2-bd0a-799f65d0e20e | Loving this new series. Next trey taking pictures of rocks. It is a whole another universe.
+ alice_jones | 2024-01-02 10:15:00.000000+0000 | Vacation Adventure | 4ceff780-c692-45f0-a17c-386bdaf72b48 |                                                     Amazing scenery! Can not wait to visit.
+
+9. Permitir a pesquisa de comentários por vídeos, ordenado inversamente pela data;
+SELECT * FROM CommentsByVideo WHERE video_name = 'Nature Photography' ORDER BY timestamp DESC;
+
+ video_name         | timestamp                       | username        | comment_id                           | comment_text
+--------------------+---------------------------------+-----------------+--------------------------------------+---------------------------------------------------------------------------------------------
+ Nature Photography | 2024-01-03 05:15:00.000000+0000 |     alice_jones | 982c2f2c-e8b9-4d1c-a061-e463e6a03ef5 | Loving this new series. Next trey taking pictures of rocks. It is a whole another universe.
+ Nature Photography | 2024-01-03 03:45:00.000000+0000 | rachel_smithson | 32e4607d-056b-494b-b8a3-38fc161b364f |                                                       Your photography skills are on point!
+ Nature Photography | 2024-01-03 02:30:00.000000+0000 |    quinn_nelson | fe54a2bd-4717-4924-9166-a38400652e4f |                                       Captivating photos! Natures beauty is truly stunning.
+
+10. Permitir a pesquisa do rating médio de um vídeo e quantas vezes foi votado;
+SELECT video_name,AVG(rating) AS average_rating,COUNT(*) AS vote_count FROM Ratings GROUP BY video_name;              
+
+ video_name           | average_rating | vote_count
+----------------------+----------------+------------
+   Vacation Adventure |              2 |          2
+   Guitar Jam Session |              3 |          2
+       DIY Home Decor |              2 |          2
+  Cooking Masterclass |              3 |          2
+      Fitness Journey |              2 |          2
+   Nature Photography |              2 |          2
+ Book Recommendations |              3 |          2
+
+1. Os últimos 3 comentários introduzidos para um vídeo;
+SELECT video_name, comment_text FROM CommentsByVideo
+WHERE video_name = 'Cooking Masterclass'
+ORDER BY timestamp DESC
+LIMIT 3;
+
+ video_name          | comment_text
+---------------------+---------------------------------------------------------------------------------------
+ Cooking Masterclass | I have been following your recipes, and they never disappoint. Another fantastic one!
+ Cooking Masterclass |                          Your videos inspire me to cook more. Keep up the great work!
+ Cooking Masterclass |                                    This recipe is a game-changer. My family loved it!
+
+2. Lista das tags de determinado vídeo;
+SELECT video_name, tags FROM Videos WHERE video_name='DIY Home Decor'; 
+
+ video_name     | tags
+----------------+-----------------------
+ DIY Home Decor | ['diy', 'home decor']
+
+3. Todos os vídeos com a tag Aveiro; (usando um index)
+SELECT * FROM Videos WHERE tags CONTAINS 'Aveiro';
+
+ username    | video_name                  | description                                                  | tags                 | upload_timestamp                | video_id
+-------------+-----------------------------+--------------------------------------------------------------+----------------------+---------------------------------+--------------------------------------
+   bob_smith | Culinary Delights in Aveiro |              Savoring local cuisine and food spots in Aveiro |   ['Aveiro', 'food'] | 2023-12-31 12:00:00.000000+0000 | 917d3cc1-281b-4b8e-817d-c28f65d63bd9
+ alice_jones |            Exploring Aveiro | Discover the charm of Aveiro, its canals, and historic sites | ['Aveiro', 'travel'] | 2023-12-31 09:30:00.000000+0000 | 0c45a000-02f8-4eff-ad24-769c12d4ccc2
+
+4. Os últimos 5 eventos de determinado vídeo realizados por um utilizador;
+SELECT video_name, user_username, event_type FROM Events WHERE video_name = 'Tech Reviews' AND user_username = 'isabel_davis' LIMIT 5;
+
+ video_name   | user_username | event_type
+--------------+---------------+------------
+ Tech Reviews |  isabel_davis |      pause
+ Tech Reviews |  isabel_davis |       play
+ Tech Reviews |  isabel_davis |       stop
+ Tech Reviews |  isabel_davis |       play
+ Tech Reviews |  isabel_davis |      pause
+
+5. Vídeos partilhados por determinado utilizador (maria1987, por exemplo) num
+determinado período de tempo (Agosto de 2017, por exemplo);
+SELECT * FROM Videos  WHERE username='maria1987'  AND upload_timestamp >= '2017-08-01 00:00:00'  AND upload_timestamp <= '2017-08-31 23:59:59';                                                    
+
+ username  | upload_timestamp                | description                                                | tags                         | video_id                             | video_name
+-----------+---------------------------------+------------------------------------------------------------+------------------------------+--------------------------------------+------------------------
+ maria1987 | 2017-08-29 17:30:00.000000+0000 |   Discussing my favorite books and recommending must-reads | ['books', 'recommendations'] | 3b387a11-471a-4394-bc52-23df9f5a437a |   Book Recommendations
+ maria1987 | 2017-08-25 12:00:00.000000+0000 |  Reviewing the latest tech gadgets and sharing my thoughts |          ['tech', 'gadgets'] | aa71c54c-85e9-44f9-99d3-fc997f3fe0e2 |    Tech Gadgets Review
+ maria1987 | 2017-08-18 08:45:00.000000+0000 |           Sharing my fitness progress and workout routines |        ['fitness', 'health'] | 20768656-01ca-4514-91bb-37f361acf652 | Fitness Journey Update
+ maria1987 | 2017-08-12 15:20:00.000000+0000 | Trying out new recipes and cooking delicious meals at home |       ['cooking', 'recipes'] | 2ed3c9b7-ec43-4a3b-a213-6744f71a62e0 |       Cooking Delights
+ maria1987 | 2017-08-05 10:30:00.000000+0000 |   Exploring beautiful places and enjoying the summer vibes |         ['travel', 'summer'] | 4c98663c-e235-43f0-8e31-fa1906b46b23 |       Summer Adventure
+
+6. Os últimos 10 vídeos, ordenado inversamente pela data da partilhada;
+Cassandra não suporta operação de ordenação inversa diretamente.
+
+7. Todos os seguidores (followers) de determinado vídeo;
+SELECT * FROM Followers WHERE video_name = 'Fitness Journey';                                                 
+
+ video_name      | user_username
+-----------------+---------------
+ Fitness Journey |  carol_miller
+ Fitness Journey |  frank_harris
+ Fitness Journey |      john_doe
+
+8. Todos os comentários (dos vídeos) que determinado utilizador está a seguir (following);
+Cassandra não permite operações de join, o objetivo de cima seria cumprido mas efetuando várias queries.
+
+9. Os 5 vídeos com maior rating;
+Não é possível realizar em Cassandra operações de ordenação em colunas que não estejam na base da tabela.
+
+10. Uma query que retorne todos os vídeos e que mostre claramente a forma pela qual estão
+ordenados;
+SELECT * FROM Videos;
+
+ username      | upload_timestamp                | description                                                      | tags                           | video_id                             | video_name
+---------------+---------------------------------+------------------------------------------------------------------+--------------------------------+--------------------------------------+-----------------------------
+     bob_smith | 2023-12-31 12:00:00.000000+0000 |                  Savoring local cuisine and food spots in Aveiro |             ['Aveiro', 'food'] | 0139e99f-d0d3-4275-b689-4aa3bdae24a9 | Culinary Delights in Aveiro
+     bob_smith | 2023-12-17 12:00:00.000000+0000 |                      Learn how to cook delicious recipes at home |            ['cooking', 'food'] | 17168246-34c5-4ad7-824b-8a00f1acfba6 |         Cooking Masterclass
+   emma_wilson | 2023-12-20 19:30:00.000000+0000 |                          Creative ideas for decorating your home |          ['diy', 'home decor'] | e821af88-836c-478e-b36e-e0769dc58eda |              DIY Home Decor
+  isabel_davis | 2023-12-24 04:45:00.000000+0000 |         Exploring different places and cultures around the world |            ['travel', 'vlogs'] | 8e0554bc-1088-41f2-811a-63eb94d3793f |                Travel Vlogs
+ jack_thompson | 2023-12-25 07:00:00.000000+0000 | Taking on various fitness challenges and documenting the journey |      ['fitness', 'challenges'] | dedba655-e1a9-425a-8815-648fd562115d |          Fitness Challenges
+   alice_jones | 2023-12-31 09:30:00.000000+0000 |     Discover the charm of Aveiro, its canals, and historic sites |           ['Aveiro', 'travel'] | a6593dcd-8279-4ff7-abb1-8555b0061150 |            Exploring Aveiro
+   alice_jones | 2023-12-16 09:30:00.000000+0000 |                           Amazing vacation trip to the mountains |        ['travel', 'adventure'] | 217b4ded-3761-4768-9d1f-acb8ec77ec78 |          Vacation Adventure
+ henry_roberts | 2023-12-23 02:30:00.000000+0000 |                       Sharing my favorite books and book reviews |           ['books', 'reading'] | 9255739e-4c5b-4f7e-a5c4-0a7d706aa6c4 |        Book Recommendations
+  carol_miller | 2023-12-31 14:45:00.000000+0000 |  A day in the life of a university student - challenges and joys | ['university', 'student life'] | 45113ce5-23fb-4a08-b4b2-1270bd9b5177 |  University Life Chronicles
+  carol_miller | 2023-12-18 14:45:00.000000+0000 |                              Sharing my fitness routine and tips |          ['fitness', 'health'] | a5f22d90-852f-4926-bb40-228124092f5d |             Fitness Journey
+     maria1987 | 2017-08-29 17:30:00.000000+0000 |         Discussing my favorite books and recommending must-reads |   ['books', 'recommendations'] | 3b387a11-471a-4394-bc52-23df9f5a437a |        Book Recommendations
+     maria1987 | 2017-08-25 12:00:00.000000+0000 |        Reviewing the latest tech gadgets and sharing my thoughts |            ['tech', 'gadgets'] | aa71c54c-85e9-44f9-99d3-fc997f3fe0e2 |         Tech Gadgets Review
+     maria1987 | 2017-08-18 08:45:00.000000+0000 |                 Sharing my fitness progress and workout routines |          ['fitness', 'health'] | 20768656-01ca-4514-91bb-37f361acf652 |      Fitness Journey Update
+     maria1987 | 2017-08-12 15:20:00.000000+0000 |       Trying out new recipes and cooking delicious meals at home |         ['cooking', 'recipes'] | 2ed3c9b7-ec43-4a3b-a213-6744f71a62e0 |            Cooking Delights
+     maria1987 | 2017-08-05 10:30:00.000000+0000 |         Exploring beautiful places and enjoying the summer vibes |           ['travel', 'summer'] | 4c98663c-e235-43f0-8e31-fa1906b46b23 |            Summer Adventure
+  frank_harris | 2023-12-21 22:00:00.000000+0000 |                              Enjoy a relaxing guitar jam session |            ['music', 'guitar'] | eab84969-fccd-45a7-ba5d-095fecaf6daf |          Guitar Jam Session
+  david_taylor | 2023-12-19 17:15:00.000000+0000 |                     Reviewing the latest gadgets and tech trends |      ['technology', 'reviews'] | 1d140b9a-81ce-458a-9927-2afec68be63e |                Tech Reviews
+  grace_martin | 2023-12-22 00:15:00.000000+0000 |               Capturing the beauty of nature through photography |      ['photography', 'nature'] | 303a9502-4cc2-47e6-8bdd-81fd6483d193 |          Nature Photography
+
+11. Lista com as Tags existentes e o número de vídeos catalogados com cada uma delas;
+Cassandra não suporta operações de agregação como COUNT ou GROUP BY diretamente.
+
+12. .. 13. Descreva 2 perguntas adicionais à base dados (alíneas 12 a 13), significativamente
+distintas das anteriores, e apresente igualmente a solução de pesquisa para cada questão
+
+12. Lista de vídeos que determinado utilizador avaliou;
+SELECT video_name FROM Ratings WHERE user_username='samuel_tucker';
+
+ video_name
+----------------------
+ Book Recommendations
+         Tech Reviews
+
+13. Número de vídeos que cada utilizador carregou
+SELECT username, COUNT(video_name) AS total_videos_carregados  FROM Videos  GROUP BY username;
+
+ username      | total_videos_carregados
+---------------+-------------------------
+     bob_smith |                       2
+   emma_wilson |                       1
+  isabel_davis |                       1
+ jack_thompson |                       1
+   alice_jones |                       2
+ henry_roberts |                       1
+  carol_miller |                       2
+     maria1987 |                       5
+  frank_harris |                       1
+  david_taylor |                       1
+  grace_martin |                       1

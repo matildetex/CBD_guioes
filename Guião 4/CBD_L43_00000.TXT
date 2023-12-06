@@ -1,0 +1,23 @@
+// NMEC: 00000
+
+# 0. Carregue o conteudo do ficheiro `/resouces/git_selection.csv`.
+LOAD CSV ...
+
+
+# 1. Liste a informação de cada utilizador.
+
+# 2. Liste o nome de cada utilizador.
+
+# 3. Liste a informação de cada projeto, no qual tenha participado pelo menos um utilizador.
+
+# 4. Liste os utilizadores e total de projetos em que cada um colabora.
+
+# 5. Liste os utilizadores e do total de projetos em que cada colabora ordenados por ordem decrescente do total.
+
+# 6. Liste projetos e total de membros em cada projeto.
+
+# 7. Liste projetos e total de membros com a role "Committer" em cada projeto.
+
+# 8. Liste todos os utilizadores que participaram nos mesmo projetos do que o utilizador "atm" (id). Mostre os atributos: nome de "atm", nome utilizador 2, nome do projeto.
+
+# 9. Liste todos os utilizadores que participaram com a role "Committer" em projetos em que o utilizador "atm" (id1) participou com a role "PMC".

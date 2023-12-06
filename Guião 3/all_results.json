@@ -1,0 +1,125 @@
+Pergunta: 7- Permitir a pesquisa de todos os vídeos de determinado autor
+Query: SELECT * FROM Videos WHERE username='bob_smith'
+Result: {"upload_timestamp":"2023-12-31T12:00:00Z","video_name":"Culinary Delights in Aveiro", "description":"Aveiro is a great city, and its food is even better.","username":"bob_smith","tags":["Aveiro","food","delicious","ovosmolesaremuah","delicious","ovosmolesaremuah","delicious","ovosmolesaremuah","delicious","ovosmolesaremuah","delicious","ovosmolesaremuah","delicious","ovosmolesaremuah","delicious","ovosmolesaremuah","delicious","ovosmolesaremuah","delicious","ovosmolesaremuah"],"video_id":"bc0b169e-f9fb-4b09-99b3-518ed984ecb1"}
+Result: {"upload_timestamp":"2023-12-17T12:00:00Z","video_name":"Cooking Masterclass","description":"Learn how to cook delicious recipes at home","username":"bob_smith","tags":["cooking","food"],"video_id":"85dff0f9-6bec-4d2b-aa44-ba41f4813a9f"}
+
+Pergunta: 8- Permitir a pesquisa de comentários por utilizador, ordenado inversamente pela data
+Query: SELECT * FROM Comments WHERE username = 'alice_jones' ORDER BY timestamp DESC
+Result: {"video_name":"Nature Photography","comment_text":"Loving this new series. Next trey taking pictures of rocks. It is a whole another universe.","comment_id":"93ebf404-a2cd-47fe-a97f-6789dde12dbf","username":"alice_jones","timestamp":"2024-01-03T05:15:00Z"}
+Result: {"video_name":"Vacation Adventure","comment_text":"Amazing scenery! Can not wait to visit.","comment_id":"75460db6-5c96-42d8-8f81-be82eff9c417","username":"alice_jones","timestamp":"2024-01-02T10:15:00Z"}
+
+Pergunta: 9. Permitir a pesquisa de comentários por vídeos, ordenado inversamente pela data;
+Query: SELECT * FROM CommentsByVideo WHERE video_name = 'Nature Photography' ORDER BY timestamp DESC;
+Result: {"video_name":"Nature Photography","comment_text":"Loving this new series. Next trey taking pictures of rocks. It is a whole another universe.","comment_id":"a206359a-0ec3-4d1a-bd34-d4d963e791bf","timestamp":"2024-01-03T05:15:00Z","username":"alice_jones"}
+Result: {"video_name":"Nature Photography","comment_text":"Your photography skills are on point.","comment_id":"a0e960ea-5b17-4885-b1ac-e3fe447ef095","timestamp":"2024-01-03T03:45:00Z","username":"rachel_smithson"}
+Result: {"video_name":"Nature Photography","comment_text":"Captivating photos! Natures beauty is truly stunning.","comment_id":"5da26f3c-d15c-4b13-9606-f6ee3dea52ad","timestamp":"2024-01-03T02:30:00Z","username":"quinn_nelson"}
+
+Pergunta: 10. Permitir a pesquisa do rating médio de um vídeo e quantas vezes foi votado;
+Query: SELECT video_name,AVG(rating) AS average_rating,COUNT(*) AS vote_count FROM Ratings GROUP BY video_name;
+Result: {"video_name":"Vacation Adventure","average_rating":2,"vote_count":2}
+Result: {"video_name":"Guitar Jam Session","average_rating":3,"vote_count":2}
+Result: {"video_name":"DIY Home Decor","average_rating":2,"vote_count":2}
+Result: {"video_name":"Cooking Masterclass","average_rating":3,"vote_count":2}
+Result: {"video_name":"Fitness Journey","average_rating":2,"vote_count":2}
+Result: {"video_name":"Nature Photography","average_rating":2,"vote_count":2}
+Result: {"video_name":"Book Recommendations","average_rating":3,"vote_count":2}
+Result: {"video_name":"Tech Reviews","average_rating":3,"vote_count":2}
+
+Pergunta: 1. Os últimos 3 comentários introduzidos para um vídeo;
+Query: SELECT video_name, comment_text FROM CommentsByVideo WHERE video_name = 'Cooking Masterclass' ORDER BY timestamp DESC LIMIT 3;
+Result: {"video_name":"Cooking Masterclass","comment_text":"I have been following your recipes, and they never disappoint. Another fantastic one!"}
+Result: {"video_name":"Cooking Masterclass","comment_text":"Your videos inspire me to cook more. Keep up the great work!"}
+Result: {"video_name":"Cooking Masterclass","comment_text":"This recipe is a game-changer. My family loved it!"}
+
+Pergunta: 2. Lista das tags de determinado vídeo;
+Query: SELECT video_name, tags FROM Videos WHERE video_name='DIY Home Decor';
+Result: {"video_name":"DIY Home Decor","tags":["diy","home decor"]}
+
+Pergunta: 3. Todos os vídeos com a tag Aveiro;
+Query: SELECT * FROM Videos WHERE tags CONTAINS 'Aveiro';
+Result: {"upload_timestamp":"2023-12-31T12:00:00Z","video_name":"Culinary Delights in Aveiro","description":"Aveiro is a great city, and its food is even better.","username":"bob_smith","tags":["Aveiro","food","delicious","ovosmolesaremuah","delicious","ovosmolesaremuah","delicious","ovosmolesaremuah","delicious","ovosmolesaremuah","delicious","ovosmolesaremuah","delicious","ovosmolesaremuah","delicious","ovosmolesaremuah","delicious","ovosmolesaremuah","delicious","ovosmolesaremuah"],"video_id":"bc0b169e-f9fb-4b09-99b3-518ed984ecb1"}
+Result: {"upload_timestamp":"2023-12-31T09:30:00Z","video_name":"Exploring Aveiro","description":"Discover the charm of Aveiro, its canals, and historic sites","username":"alice_jones","tags":["Aveiro","travel"],"video_id":"7e228289-1402-4228-9c01-5ea1365f0a4b"}
+
+Pergunta: 4. Os últimos 5 eventos de determinado vídeo realizados por um utilizador;
+Query: SELECT video_name, user_username, event_type FROM Events WHERE video_name = 'Tech Reviews' AND user_username = 'isabel_davis' LIMIT 5;
+Result: {"video_name":"Tech Reviews","event_type":"pause","user_username":"isabel_davis"}
+Result: {"video_name":"Tech Reviews","event_type":"play","user_username":"isabel_davis"}
+Result: {"video_name":"Tech Reviews","event_type":"stop","user_username":"isabel_davis"}
+Result: {"video_name":"Tech Reviews","event_type":"play","user_username":"isabel_davis"}
+Result: {"video_name":"Tech Reviews","event_type":"pause","user_username":"isabel_davis"}
+
+Pergunta: 5. Vídeos partilhados por determinado utilizador (maria1987, por exemplo) num determinado período de tempo (Agosto de 2017, por exemplo);
+Query: SELECT * FROM Videos  WHERE username='maria1987'  AND upload_timestamp >= '2017-08-01 00:00:00'  AND upload_timestamp <= '2017-08-31 23:59:59';
+Result: {"upload_timestamp":"2017-08-29T17:30:00Z","video_name":"Book Recommendations","description":"Discussing my favorite books and recommending must-reads","username":"maria1987","tags":["books","recommendations"],"video_id":"1d1233b9-5f57-45f8-996d-40edcdebec59"}
+Result: {"upload_timestamp":"2017-08-25T12:00:00Z","video_name":"Tech Gadgets Review","description":"Reviewing the latest tech gadgets and sharing my thoughts","username":"maria1987","tags":["tech","gadgets"],"video_id":"ed0c62ff-b313-4f93-9c04-d93eca2888d8"}
+Result: {"upload_timestamp":"2017-08-18T08:45:00Z","video_name":"Fitness Journey Update","description":"Sharing my fitness progress and workout routines","username":"maria1987","tags":["fitness","health"],"video_id":"9fce9596-4a6b-4c0e-b739-de1cff0b382b"}
+Result: {"upload_timestamp":"2017-08-12T15:20:00Z","video_name":"Cooking Delights","description":"Trying out new recipes and cooking delicious meals at home","username":"maria1987","tags":["cooking","recipes"],"video_id":"cd5b722a-5200-4a12-b543-2241491e8ff4"}
+Result: {"upload_timestamp":"2017-08-05T10:30:00Z","video_name":"Summer Adventure","description":"Exploring beautiful places and enjoying the summer vibes","username":"maria1987","tags":["travel","summer"],"video_id":"eb6b7150-6e22-43a5-9d57-6e1cfec68e10"}
+
+Pergunta: 6. Os últimos 10 vídeos, ordenado inversamente pela data da partilhada;
+Query: null
+Result: {"justificacao":"Cassandra não suporta operação de ordenação inversa diretamente."}
+
+Pergunta: 7. Todos os seguidores (followers) de determinado vídeo;
+Query: SELECT * FROM Followers WHERE video_name = 'Fitness Journey';
+Result: {"video_name":"Fitness Journey","user_username":"carol_miller"}
+Result: {"video_name":"Fitness Journey","user_username":"frank_harris"}
+Result: {"video_name":"Fitness Journey","user_username":"john_doe"}
+
+Pergunta: 8. Todos os comentários (dos vídeos) que determinado utilizador está a seguir (following);
+Query: null
+Result: {"pergunta":"8. Todos os comentários (dos vídeos) que determinado utilizador está a seguir (following);","justificacao":"Cassandra não permite operações de join, o objetivo de cima seria cumprido mas efetuando várias queries."}
+
+Pergunta: 9. Os 5 vídeos com maior rating;
+Query: null
+Result: {"pergunta":"9. Os 5 vídeos com maior rating;","justificacao":"Não é possível realizar em Cassandra operações de ordenação em colunas que não estejam na base da tabela."}
+
+Pergunta: 10. Uma query que retorne todos os vídeos e que mostre claramente a forma pela qual estão ordenados;
+Query: SELECT * FROM Videos;
+Result: {"upload_timestamp":"2023-12-31T12:00:00Z","video_name":"Culinary Delights in Aveiro","description":"Aveiro is a great city, and its food is even better.","username":"bob_smith","tags":["Aveiro","food","delicious","ovosmolesaremuah","delicious","ovosmolesaremuah","delicious","ovosmolesaremuah","delicious","ovosmolesaremuah","delicious","ovosmolesaremuah","delicious","ovosmolesaremuah","delicious","ovosmolesaremuah","delicious","ovosmolesaremuah","delicious","ovosmolesaremuah"],"video_id":"bc0b169e-f9fb-4b09-99b3-518ed984ecb1"}
+Result: {"upload_timestamp":"2023-12-17T12:00:00Z","video_name":"Cooking Masterclass","description":"Learn how to cook delicious recipes at home","username":"bob_smith","tags":["cooking","food"],"video_id":"85dff0f9-6bec-4d2b-aa44-ba41f4813a9f"}
+Result: {"upload_timestamp":"2023-12-20T19:30:00Z","video_name":"DIY Home Decor","description":"Creative ideas for decorating your home","username":"emma_wilson","tags":["diy","home decor"],"video_id":"e877f227-fdf3-4697-8c95-14ba2289db40"}
+Result: {"upload_timestamp":"2023-12-24T04:45:00Z","video_name":"Travel Vlogs","description":"Exploring different places and cultures around the world","username":"isabel_davis","tags":["travel","vlogs"],"video_id":"2d2d4219-722d-40fb-8fad-da6ecfdafdb4"}
+Result: {"upload_timestamp":"2023-12-25T07:00:00Z","video_name":"Fitness Challenges","description":"Taking on various fitness challenges and documenting the journey","username":"jack_thompson","tags":["fitness","challenges"],"video_id":"a0b14291-98ae-4172-9ce4-68d0421b88d8"}
+Result: {"upload_timestamp":"2023-12-31T09:30:00Z","video_name":"Exploring Aveiro","description":"Discover the charm of Aveiro, its canals, and historic sites","username":"alice_jones","tags":["Aveiro","travel"],"video_id":"7e228289-1402-4228-9c01-5ea1365f0a4b"}
+Result: {"upload_timestamp":"2023-12-16T09:30:00Z","video_name":"Vacation Adventure","description":"Amazing vacation trip to the mountains","username":"alice_jones","tags":["travel","adventure"],"video_id":"ad14053a-4885-40f4-b967-ac1c75d6333b"}
+Result: {"upload_timestamp":"2023-12-23T02:30:00Z","video_name":"Book Recommendations","description":"Sharing my favorite books and book reviews","username":"henry_roberts","tags":["books","reading"],"video_id":"80cb6329-db92-4cb9-86be-377d7ccf963b"}
+Result: {"upload_timestamp":"2023-12-31T14:45:00Z","video_name":"University Life Chronicles","description":"A day in the life of a university student - challenges and joys","username":"carol_miller","tags":["university","student life"],"video_id":"00336fac-fec5-49de-961a-e7ec3fe4df78"}
+Result: {"upload_timestamp":"2023-12-18T14:45:00Z","video_name":"Fitness Journey","description":"Sharing my fitness routine and tips","username":"carol_miller","tags":["fitness","health"],"video_id":"b1140a51-63ee-4754-b1c5-3739b8796a2b"}
+Result: {"upload_timestamp":"2017-08-29T17:30:00Z","video_name":"Book Recommendations","description":"Discussing my favorite books and recommending must-reads","username":"maria1987","tags":["books","recommendations"],"video_id":"1d1233b9-5f57-45f8-996d-40edcdebec59"}
+Result: {"upload_timestamp":"2017-08-25T12:00:00Z","video_name":"Tech Gadgets Review","description":"Reviewing the latest tech gadgets and sharing my thoughts","username":"maria1987","tags":["tech","gadgets"],"video_id":"ed0c62ff-b313-4f93-9c04-d93eca2888d8"}
+Result: {"upload_timestamp":"2017-08-18T08:45:00Z","video_name":"Fitness Journey Update","description":"Sharing my fitness progress and workout routines","username":"maria1987","tags":["fitness","health"],"video_id":"9fce9596-4a6b-4c0e-b739-de1cff0b382b"}
+Result: {"upload_timestamp":"2017-08-12T15:20:00Z","video_name":"Cooking Delights","description":"Trying out new recipes and cooking delicious meals at home","username":"maria1987","tags":["cooking","recipes"],"video_id":"cd5b722a-5200-4a12-b543-2241491e8ff4"}
+Result: {"upload_timestamp":"2017-08-05T10:30:00Z","video_name":"Summer Adventure","description":"Exploring beautiful places and enjoying the summer vibes","username":"maria1987","tags":["travel","summer"],"video_id":"eb6b7150-6e22-43a5-9d57-6e1cfec68e10"}
+Result: {"upload_timestamp":"2023-12-21T22:00:00Z","video_name":"Guitar Jam Session","description":"Enjoy a relaxing guitar jam session","username":"frank_harris","tags":["music","guitar"],"video_id":"de33186c-2408-4aad-983a-f9299590f459"}
+Result: {"upload_timestamp":"2023-12-19T17:15:00Z","video_name":"Tech Reviews","description":"Reviewing the latest gadgets and tech trends","username":"david_taylor","tags":["technology","reviews"],"video_id":"3ad37087-c209-41b7-93df-ba7cc1b261e8"}
+Result: {"upload_timestamp":"2023-12-22T00:15:00Z","video_name":"Nature Photography","description":"Capturing the beauty of nature through photography","username":"grace_martin","tags":["photography","nature"],"video_id":"c654b3ff-8943-48bd-b394-506908810a57"}
+
+Pergunta: 11. Lista com as Tags existentes e o número de vídeos catalogados com cada uma delas;
+Query: null
+Result: {"pergunta":"11. Lista com as Tags existentes e o número de vídeos catalogados com cada uma delas;","justificacao":"Cassandra não suporta operações de agregação como COUNT ou GROUP BY diretamente."}
+
+Pergunta: 12. Lista de vídeos que determinado utilizador avaliou;
+Query: SELECT video_name FROM Ratings WHERE user_username='samuel_tucker';
+Result: {"video_name":"Book Recommendations"}
+Result: {"video_name":"Tech Reviews"}
+
+
+
+
+Pergunta: 13. Número de vídeos que cada utilizador carregou
+Query: SELECT username, COUNT(video_name) AS total_videos_carregados  FROM Videos  GROUP BY username;
+Result: {"total_videos_carregados":2,"username":"bob_smith"}
+Result: {"total_videos_carregados":1,"username":"emma_wilson"}
+Result: {"total_videos_carregados":1,"username":"isabel_davis"}
+Result: {"total_videos_carregados":1,"username":"jack_thompson"}
+Result: {"total_videos_carregados":2,"username":"alice_jones"}
+Result: {"total_videos_carregados":1,"username":"henry_roberts"}
+Result: {"total_videos_carregados":2,"username":"carol_miller"}
+Result: {"total_videos_carregados":5,"username":"maria1987"}
+Result: {"total_videos_carregados":1,"username":"frank_harris"}
+Result: {"total_videos_carregados":1,"username":"david_taylor"}
+Result: {"total_videos_carregados":1,"username":"grace_martin"}
+
+
+
